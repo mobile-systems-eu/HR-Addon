@@ -54,6 +54,15 @@ doc_events = {
 	"Overtime Ledger Entry": {
 		"after_insert": "hr_addon.events.overtime_ledger.after_insert_overtime_ledger_entry",
 	},
+	# MSW: Der geplante Auftrag arbeitet nur ueber Tage OHNE Workday
+	# (get_unmarked_range). Eine Stempelung, die erst nach dem Lauf
+	# ankommt -- Stempeluhr war offline, Zeit von Hand nachgetragen --
+	# blieb damit unberuecksichtigt. Siehe events/employee_checkin.py.
+	"Employee Checkin": {
+		"after_insert": "hr_addon.events.employee_checkin.revalidate_workday_after_insert",
+		"on_update": "hr_addon.events.employee_checkin.revalidate_workday_on_update",
+		"on_trash": "hr_addon.events.employee_checkin.revalidate_workday_on_trash",
+	},
 }
 
 scheduler_events = {
