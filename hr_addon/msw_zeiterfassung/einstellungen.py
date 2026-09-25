@@ -132,12 +132,25 @@ FIELDS = [
 		"depends_on": "eval:doc.msw_tagesabschluss_aktiv",
 		"insert_after": "msw_tagesabschluss_aktiv",
 	},
+	{
+		"fieldname": "msw_fehltage_buchen",
+		"fieldtype": "Check",
+		"label": "Fehltage mit Minusstunden buchen",
+		"default": "1",
+		"description": (
+			"Ein vergangener Arbeitstag mit Sollzeit, an dem der Mitarbeiter gar nicht "
+			"gestempelt hat und keine Abwesenheit eingetragen ist, wird als „Fehlt“ "
+			"gebucht: die Sollstunden gehen als Minusstunden ins Zeitkonto. Tage ohne "
+			"Sollzeit (z. B. Samstag) ohne Stempelung gelten als „Kein Arbeitstag“."
+		),
+		"insert_after": "msw_tagesabschluss_tage",
+	},
 	# -- Urlaub --------------------------------------------------------
 	{
 		"fieldname": "msw_sec_urlaub",
 		"fieldtype": "Section Break",
 		"label": "Urlaub",
-		"insert_after": "msw_tagesabschluss_tage",
+		"insert_after": "msw_fehltage_buchen",
 	},
 	{
 		"fieldname": "msw_urlaub_nur_sollzeit",

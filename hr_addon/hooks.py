@@ -56,6 +56,11 @@ doc_events = {
 	"HR Addon Settings": {
 		"on_update": "hr_addon.msw_zeiterfassung.oberflaeche.nach_speichern",
 	},
+	# MSW: Fehltage erkennen und mit Minusstunden buchen, siehe msw_zeiterfassung/fehltage.py
+	"Workday": {
+		"validate": "hr_addon.msw_zeiterfassung.fehltage.kein_arbeitstag_ohne_sollzeit",
+		"on_update": "hr_addon.msw_zeiterfassung.fehltage.buche_fehltag",
+	},
 	"Leave Application": {
 		"validate": "hr_addon.events.leave_application.validate_leave_application",
 		"on_change": "hr_addon.hr_addon.doctype.hr_addon_settings.hr_addon_settings.export_calendar",

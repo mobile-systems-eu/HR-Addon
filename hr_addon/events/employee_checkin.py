@@ -234,7 +234,9 @@ def close_past_workdays() -> None:
     auf einem Status ohne Buchung stehen, aber noch eine eigene
     ``Present``-Attendance tragen -- typisch: Gehen vergessen. Fuer diese
     Tage laeuft ``sync_workday()``, rechnet neu und storniert, falls der
-    Tag weiterhin ungerade ist.
+    Tag weiterhin ungerade ist. Ausserdem Fehltage (``Absent`` mit
+    Sollzeit) ohne Anwesenheit: das Speichern bucht sie
+    (``msw_zeiterfassung/fehltage.py``).
 
     Bewusst nicht jeden Workday neu speichern: die Checkin-Hooks halten
     sie ohnehin aktuell, und der Auftrag soll nur das Abschliessen
@@ -253,14 +255,28 @@ def close_past_workdays() -> None:
             "status": ["in", STATUS_OHNE_BUCHUNG],
             "log_date": ["between", [add_days(heute, -tage), add_days(heute, -1)]],
         },
-        fields=["name", "employee", "log_date"],
+        fields=["name", "employee", "log_date", "status", "target_hours"],
     )
 
+    from hr_addon.msw_zeiterfassung import fehltage
+
     for wd in workdays:
-        if not frappe.db.exists(
+        teilbuchung = frappe.db.exists(
             "Attendance",
             {"custom_workday": wd.name, "docstatus": 1, "status": "Present"},
-        ):
+        )
+        # Fehltag ohne Buchung nachholen (msw_zeiterfassung/fehltage.py),
+        # z. B. wenn der Workday vor dem Einschalten entstanden ist
+        fehltag_offen = (
+            fehltage.aktiv()
+            and wd.status == "Absent"
+            and (wd.target_hours or 0) > 0
+            and not frappe.db.exists(
+                "Attendance",
+                {"employee": wd.employee, "attendance_date": wd.log_date, "docstatus": 1},
+            )
+        )
+        if not teilbuchung and not fehltag_offen:
             continue
         try:
             sync_workday(wd.employee, str(wd.log_date))

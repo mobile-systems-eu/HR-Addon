@@ -10,8 +10,8 @@
    "label": "Zeitkonto je Mitarbeiter"
   }
  ],
- "content": "[{\"id\": \"msw001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Heute</b></span>\", \"col\": 12}}, {\"id\": \"msw002\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Stempelungen heute\", \"col\": 4}}, {\"id\": \"msw003\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Gerade eingestempelt\", \"col\": 4}}, {\"id\": \"msw004\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Heute abwesend (Urlaub)\", \"col\": 4}}, {\"id\": \"msw005\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Fehlende Stempelungen 7 Tage\", \"col\": 4}}, {\"id\": \"msw006\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Mitarbeiter im Minus\", \"col\": 4}}, {\"id\": \"msw007\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Zeitkonto gesamt\", \"col\": 4}}, {\"id\": \"msw008\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"msw009\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Schnellzugriff</b></span>\", \"col\": 12}}, {\"id\": \"msw010\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fehlende Stempelungen\", \"col\": 4}}, {\"id\": \"msw011\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Stempelung nachtragen\", \"col\": 4}}, {\"id\": \"msw012\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Abwesenheit eintragen\", \"col\": 4}}, {\"id\": \"msw013\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Schicht zuweisen\", \"col\": 4}}, {\"id\": \"msw014\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Zeitkonto korrigieren\", \"col\": 4}}, {\"id\": \"msw015\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Offene Abwesenheitsanträge\", \"col\": 4}}, {\"id\": \"msw016\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"msw017\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Iststunden je Tag\", \"col\": 12}}, {\"id\": \"msw018\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Zeitkonto je Mitarbeiter\", \"col\": 12}}]",
- "creation": "2026-09-25 22:00:00.000000",
+ "content": "[{\"id\": \"msw001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Heute</b></span>\", \"col\": 12}}, {\"id\": \"msw002\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Stempelungen heute\", \"col\": 4}}, {\"id\": \"msw003\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Gerade eingestempelt\", \"col\": 4}}, {\"id\": \"msw004\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Heute abwesend (Urlaub)\", \"col\": 4}}, {\"id\": \"msw005\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Fehlende Stempelungen 7 Tage\", \"col\": 4}}, {\"id\": \"msw006\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Fehltage 7 Tage\", \"col\": 4}}, {\"id\": \"msw007\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Mitarbeiter im Minus\", \"col\": 4}}, {\"id\": \"msw008\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Zeitkonto gesamt\", \"col\": 4}}, {\"id\": \"msw009\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"msw010\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Schnellzugriff</b></span>\", \"col\": 12}}, {\"id\": \"msw011\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fehltage\", \"col\": 4}}, {\"id\": \"msw012\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fehlende Stempelungen\", \"col\": 4}}, {\"id\": \"msw013\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Stempelung nachtragen\", \"col\": 4}}, {\"id\": \"msw014\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Abwesenheit eintragen\", \"col\": 4}}, {\"id\": \"msw015\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Schicht zuweisen\", \"col\": 4}}, {\"id\": \"msw016\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Zeitkonto korrigieren\", \"col\": 4}}, {\"id\": \"msw017\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Offene Abwesenheitsanträge\", \"col\": 4}}, {\"id\": \"msw018\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"msw019\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Iststunden je Tag\", \"col\": 12}}, {\"id\": \"msw020\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Zeitkonto je Mitarbeiter\", \"col\": 12}}]",
+ "creation": "2026-09-26 08:00:00.000000",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -22,7 +22,7 @@
  "is_hidden": 0,
  "label": "Zeiterfassung",
  "links": [],
- "modified": "2026-09-25 22:00:00.000000",
+ "modified": "2026-09-26 08:00:00.000000",
  "modified_by": "Administrator",
  "module": "MSW Zeiterfassung",
  "name": "Zeiterfassung",
@@ -42,6 +42,10 @@
   {
    "label": "Fehlende Stempelungen 7 Tage",
    "number_card_name": "Fehlende Stempelungen 7 Tage"
+  },
+  {
+   "label": "Fehltage 7 Tage",
+   "number_card_name": "Fehltage 7 Tage"
   },
   {
    "label": "Mitarbeiter im Minus",
@@ -72,6 +76,15 @@
  ],
  "sequence_id": 4.5,
  "shortcuts": [
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "{} Tage",
+   "label": "Fehltage",
+   "link_to": "Workday",
+   "stats_filter": "[[\"Workday\", \"status\", \"=\", \"Absent\"], [\"Workday\", \"target_hours\", \">\", \"0\"]]",
+   "type": "DocType"
+  },
   {
    "color": "Red",
    "doc_view": "List",

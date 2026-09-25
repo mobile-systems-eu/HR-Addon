@@ -81,6 +81,7 @@ FELDREIHENFOLGE = {
 		"msw_sofort_neu_berechnen",
 		"msw_tagesabschluss_aktiv",
 		"msw_tagesabschluss_tage",
+		"msw_fehltage_buchen",
 		"msw_sec_urlaub",
 		"msw_urlaub_nur_sollzeit",
 		"half_day_holidays_section_section",
