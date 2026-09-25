@@ -203,8 +203,25 @@ def _is_stored(fieldname: str) -> bool:
 	)
 
 
+def ensure_module_def():
+	"""Module Def fuer "MSW Zeiterfassung" anlegen, falls er fehlt.
+
+	frappe legt Module Defs nur bei der Installation einer App an
+	(``installer.add_module_defs``), nicht beim ``migrate``. Ein Modul, das
+	spaeter in ``modules.txt`` dazukommt, fehlt damit in der Datenbank --
+	Custom Fields mit ``module = MSW Zeiterfassung`` scheitern dann an der
+	Link-Pruefung. Haengt an ``before_migrate``; ``setup()`` ruft es zur
+	Sicherheit ebenfalls auf.
+	"""
+	if not frappe.db.exists("Module Def", MODULE):
+		frappe.get_doc(
+			{"doctype": "Module Def", "module_name": MODULE, "app_name": "hr_addon"}
+		).insert(ignore_permissions=True)
+
+
 def setup():
 	"""Custom Fields anlegen/aktualisieren und Standardwerte einmalig setzen."""
+	ensure_module_def()
 	fields = [dict(f, module=MODULE) for f in FIELDS]
 	create_custom_fields({SETTINGS: fields}, update=True)
 
