@@ -72,7 +72,15 @@ scheduler_events = {
 	"daily": [
 		"hr_addon.hr_addon.doctype.hr_addon_settings.hr_addon_settings.send_work_anniversary_notification",
 		"hr_addon.hr_addon.doctype.hr_addon_settings.hr_addon_settings.repost_all_overtime_ledger_entries",
-	]
+	],
+	# MSW: Tagesabschluss nach dem Stempelfenster (Sa bis 24:00). Raeumt
+	# Teilbuchungen von Tagen ab, die ungerade geendet haben. Siehe
+	# events/employee_checkin.py, "Zwischenstand und Tagesabschluss".
+	"cron": {
+		"30 0 * * *": [
+			"hr_addon.events.employee_checkin.close_past_workdays",
+		],
+	},
 }
 
 override_doctype_class = {

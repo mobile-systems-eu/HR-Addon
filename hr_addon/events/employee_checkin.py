@@ -37,13 +37,31 @@ Hintergrundjob ein:
   legt die Attendance ohne ``ignore_permissions`` an und wuerde mit den
   Rechten des Geraets scheitern. Der naechtliche Auftrag laeuft aus
   demselben Grund privilegiert.
+
+Zwischenstand und Tagesabschluss
+--------------------------------
+Mit gestempelten Pausen ist die Anzahl der Stempel jeden Tag zeitweise
+ungerade, der Workday steht dann auf ``Missing Checkin``. Tagsueber bleibt
+die Buchung aus den vollstaendigen Paaren deshalb als Zwischenstand stehen;
+der naechste gerade Stempel aktualisiert sie an Ort und Stelle. Storniert
+wird erst, wenn der Tag vorbei ist -- sonst gaebe es jeden Tag eine
+stornierte Attendance und eine Gegenbuchung.
+
+Ist ein Tag danach immer noch ungerade (Gehen vergessen), raeumt
+``close_past_workdays`` um 0:30 die Teilbuchung ab. Der Auftrag des Addons
+kann das nicht: er schliesst ``heute`` in seinen Zeitraum ein, legt den
+Workday um 0 Uhr fuer den neuen Tag an und fasst ihn danach nie wieder an.
 """
 
 import frappe
-from frappe.utils import getdate
+from frappe.utils import add_days, getdate, today
 
 JOB_QUEUE = "short"
 JOB_TIMEOUT = 600
+
+TAGE_RUECKWIRKEND = 7
+"""So weit schaut der Tagesabschluss zurueck. Faellt ein Lauf aus (Server
+aus, Worker haengt), holt der naechste ihn nach."""
 
 STATUS_OHNE_BUCHUNG = ("Missing Checkin", "Absent")
 """Workday-Status, bei denen ``create_attendace_record()`` ohne jede
@@ -140,7 +158,10 @@ def sync_workday(employee: str, log_date: str) -> None:
         if name:
             workday = frappe.get_doc("Workday", name)
             workday.save()
-            _cancel_stale_attendance(workday)
+            if datum < getdate(today()):
+                # Heute ist ein ungerader Stand der Normalfall (Pause
+                # laeuft), siehe "Zwischenstand und Tagesabschluss".
+                _cancel_stale_attendance(workday)
             frappe.db.commit()
             return
 
@@ -196,3 +217,51 @@ def _cancel_stale_attendance(workday) -> None:
     )
     for name in namen:
         frappe.get_doc("Attendance", name).cancel()
+
+
+# -- Tagesabschluss --------------------------------------------------------
+
+
+def close_past_workdays() -> None:
+    """Teilbuchungen vergangener Tage abraeumen (Cron 0:30).
+
+    Sucht Workdays der letzten ``TAGE_RUECKWIRKEND`` Tage vor heute, die
+    auf einem Status ohne Buchung stehen, aber noch eine eigene
+    ``Present``-Attendance tragen -- typisch: Gehen vergessen. Fuer diese
+    Tage laeuft ``sync_workday()``, rechnet neu und storniert, falls der
+    Tag weiterhin ungerade ist.
+
+    Bewusst nicht jeden Workday neu speichern: die Checkin-Hooks halten
+    sie ohnehin aktuell, und der Auftrag soll nur das Abschliessen
+    nachholen, das tagsueber absichtlich unterbleibt.
+    """
+    if not frappe.db.get_single_value("HR Addon Settings", "enabled"):
+        return
+
+    heute = getdate(today())
+    workdays = frappe.get_all(
+        "Workday",
+        filters={
+            "status": ["in", STATUS_OHNE_BUCHUNG],
+            "log_date": ["between", [add_days(heute, -TAGE_RUECKWIRKEND), add_days(heute, -1)]],
+        },
+        fields=["name", "employee", "log_date"],
+    )
+
+    for wd in workdays:
+        if not frappe.db.exists(
+            "Attendance",
+            {"custom_workday": wd.name, "docstatus": 1, "status": "Present"},
+        ):
+            continue
+        try:
+            sync_workday(wd.employee, str(wd.log_date))
+        except Exception:
+            # Ein Tag darf die uebrigen nicht blockieren, z.B. wenn er
+            # inzwischen im eingefrorenen Zeitraum liegt.
+            frappe.db.rollback()
+            frappe.log_error(
+                title="Tagesabschluss Workday",
+                message=f"Workday {wd.name} ({wd.employee}, {wd.log_date})\n\n"
+                + frappe.get_traceback(),
+            )
