@@ -56,12 +56,15 @@ Workday um 0 Uhr fuer den neuen Tag an und fasst ihn danach nie wieder an.
 import frappe
 from frappe.utils import add_days, getdate, today
 
+from hr_addon.msw_zeiterfassung import einstellungen
+
 JOB_QUEUE = "short"
 JOB_TIMEOUT = 600
 
 TAGE_RUECKWIRKEND = 7
-"""So weit schaut der Tagesabschluss zurueck. Faellt ein Lauf aus (Server
-aus, Worker haengt), holt der naechste ihn nach."""
+"""Standard fuer die Einstellung ``msw_tagesabschluss_tage``: so weit schaut
+der Tagesabschluss zurueck. Faellt ein Lauf aus (Server aus, Worker
+haengt), holt der naechste ihn nach."""
 
 STATUS_OHNE_BUCHUNG = ("Missing Checkin", "Absent")
 """Workday-Status, bei denen ``create_attendace_record()`` ohne jede
@@ -116,6 +119,8 @@ def _enqueue(employee, zeitpunkt):
     if not employee or not zeitpunkt:
         return
     if frappe.flags.get(REENTRY_FLAG):
+        return
+    if not einstellungen.get("msw_sofort_neu_berechnen"):
         return
 
     frappe.enqueue(
@@ -225,7 +230,7 @@ def _cancel_stale_attendance(workday) -> None:
 def close_past_workdays() -> None:
     """Teilbuchungen vergangener Tage abraeumen (Cron 0:30).
 
-    Sucht Workdays der letzten ``TAGE_RUECKWIRKEND`` Tage vor heute, die
+    Sucht Workdays der letzten ``msw_tagesabschluss_tage`` Tage vor heute, die
     auf einem Status ohne Buchung stehen, aber noch eine eigene
     ``Present``-Attendance tragen -- typisch: Gehen vergessen. Fuer diese
     Tage laeuft ``sync_workday()``, rechnet neu und storniert, falls der
@@ -237,13 +242,16 @@ def close_past_workdays() -> None:
     """
     if not frappe.db.get_single_value("HR Addon Settings", "enabled"):
         return
+    if not einstellungen.get("msw_tagesabschluss_aktiv"):
+        return
 
+    tage = einstellungen.get("msw_tagesabschluss_tage") or TAGE_RUECKWIRKEND
     heute = getdate(today())
     workdays = frappe.get_all(
         "Workday",
         filters={
             "status": ["in", STATUS_OHNE_BUCHUNG],
-            "log_date": ["between", [add_days(heute, -TAGE_RUECKWIRKEND), add_days(heute, -1)]],
+            "log_date": ["between", [add_days(heute, -tage), add_days(heute, -1)]],
         },
         fields=["name", "employee", "log_date"],
     )

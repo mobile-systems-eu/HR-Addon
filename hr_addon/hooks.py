@@ -10,7 +10,11 @@ app_email = "support@phamos.eu"
 app_license = "MIT"
 
 after_install = "hr_addon.hr_addon.doctype.workday.workday.create_background_job_for_workday_generation_after_install"
-after_migrate = "hr_addon.hr_addon.doctype.workday.workday.create_background_job_for_workday_generation_after_install"
+after_migrate = [
+	"hr_addon.hr_addon.doctype.workday.workday.create_background_job_for_workday_generation_after_install",
+	# MSW: Einstellungsfelder der Zeiterfassung, siehe msw_zeiterfassung/einstellungen.py
+	"hr_addon.msw_zeiterfassung.einstellungen.setup",
+]
 
 fixtures = [
 	{"dt": "Custom Field", "filters": [
@@ -59,6 +63,8 @@ doc_events = {
 	# ankommt -- Stempeluhr war offline, Zeit von Hand nachgetragen --
 	# blieb damit unberuecksichtigt. Siehe events/employee_checkin.py.
 	"Employee Checkin": {
+		# MSW: Sonn-/Feiertag ablehnen, siehe msw_zeiterfassung/stempelregeln.py
+		"before_insert": "hr_addon.msw_zeiterfassung.stempelregeln.pruefe_neue_stempelung",
 		"after_insert": "hr_addon.events.employee_checkin.revalidate_workday_after_insert",
 		"on_update": "hr_addon.events.employee_checkin.revalidate_workday_on_update",
 		"on_trash": "hr_addon.events.employee_checkin.revalidate_workday_on_trash",

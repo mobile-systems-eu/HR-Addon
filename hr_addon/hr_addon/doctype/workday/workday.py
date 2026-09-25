@@ -1034,7 +1034,9 @@ def is_non_working_day_for_employee(employee, date, leave_type=None):
 
 @frappe.whitelist()
 def date_is_in_holiday_list(employee, date):
-    holiday_list = frappe.get_cached_value("Employee", employee, "holiday_list")
+    # MSW: wie hrms v16 ueber Holiday List Assignment, siehe msw_zeiterfassung/feiertage.py
+    from hr_addon.msw_zeiterfassung.feiertage import get_holiday_list
+    holiday_list = get_holiday_list(employee, date)
     if not holiday_list:
         frappe.msgprint(_("Holiday list not set in {0}").format(employee))
         return False
