@@ -1,0 +1,313 @@
+{
+ "app": "hr_addon",
+ "creation": "2026-09-25 22:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "header_icon": "clock",
+ "idx": 0,
+ "items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "house",
+   "idx": 1,
+   "label": "Übersicht",
+   "link_to": "Zeiterfassung",
+   "link_type": "Workspace",
+   "type": "Link"
+  },
+  {
+   "collapsible": 1,
+   "icon": "fingerprint",
+   "idx": 2,
+   "indent": 1,
+   "keep_closed": 0,
+   "label": "Erfassung",
+   "link_type": "DocType",
+   "type": "Section Break"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 3,
+   "label": "Stempelungen",
+   "link_to": "Employee Checkin",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 4,
+   "label": "Arbeitstage",
+   "link_to": "Workday",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "filters": "[[\"Workday\", \"status\", \"=\", \"Missing Checkin\"]]",
+   "idx": 5,
+   "label": "Fehlende Stempelungen",
+   "link_to": "Workday",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 6,
+   "label": "Anwesenheiten",
+   "link_to": "Attendance",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "collapsible": 1,
+   "icon": "wallet",
+   "idx": 7,
+   "indent": 1,
+   "keep_closed": 0,
+   "label": "Zeitkonto",
+   "link_type": "DocType",
+   "type": "Section Break"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 8,
+   "label": "Zeitkonto-Salden",
+   "link_to": "Zeitkonto-Salden",
+   "link_type": "Report",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 9,
+   "label": "Zeitkonto-Buchungen",
+   "link_to": "Overtime Ledger",
+   "link_type": "Report",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 10,
+   "label": "Zeitkonto-Korrekturen und Auszahlungen",
+   "link_to": "Overtime Payout",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 11,
+   "label": "Arbeitszeitbericht",
+   "link_to": "Work Hour Report",
+   "link_type": "Report",
+   "type": "Link"
+  },
+  {
+   "collapsible": 1,
+   "icon": "umbrella",
+   "idx": 12,
+   "indent": 1,
+   "keep_closed": 0,
+   "label": "Urlaub und Abwesenheit",
+   "link_type": "DocType",
+   "type": "Section Break"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 13,
+   "label": "Abwesenheitsanträge",
+   "link_to": "Leave Application",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 14,
+   "label": "Urlaubsansprüche",
+   "link_to": "Leave Allocation",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 15,
+   "label": "Urlaub für mehrere zuteilen",
+   "link_to": "Leave Control Panel",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 16,
+   "label": "Resturlaub",
+   "link_to": "Employee Leave Balance",
+   "link_type": "Report",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 17,
+   "label": "Urlaubsübersicht",
+   "link_to": "Employee Leave Balance Summary",
+   "link_type": "Report",
+   "type": "Link"
+  },
+  {
+   "collapsible": 1,
+   "icon": "calendar-clock",
+   "idx": 18,
+   "indent": 1,
+   "keep_closed": 0,
+   "label": "Schichten",
+   "link_type": "DocType",
+   "type": "Section Break"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 19,
+   "label": "Dienstplan",
+   "link_type": "URL",
+   "type": "Link",
+   "url": "/hr/roster"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 20,
+   "label": "Schichtzuweisungen",
+   "link_to": "Shift Assignment",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 21,
+   "label": "Schichten",
+   "link_to": "Shift Type",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "collapsible": 1,
+   "icon": "users",
+   "idx": 22,
+   "indent": 1,
+   "keep_closed": 1,
+   "label": "Stammdaten",
+   "link_type": "DocType",
+   "type": "Section Break"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 23,
+   "label": "Mitarbeiter",
+   "link_to": "Employee",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 24,
+   "label": "Sollarbeitszeiten",
+   "link_to": "Weekly Working Hours",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 25,
+   "label": "Feiertagslisten",
+   "link_to": "Holiday List",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 26,
+   "label": "Feiertagsliste-Zuordnung",
+   "link_to": "Holiday List Assignment",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 27,
+   "label": "Abwesenheitsarten",
+   "link_to": "Leave Type",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 28,
+   "label": "Urlaubsregelungen",
+   "link_to": "Leave Policy",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 29,
+   "label": "Zuordnung Urlaubsregelung",
+   "link_to": "Leave Policy Assignment",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "collapsible": 1,
+   "icon": "settings",
+   "idx": 30,
+   "indent": 1,
+   "keep_closed": 1,
+   "label": "Einstellungen",
+   "link_type": "DocType",
+   "type": "Section Break"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 31,
+   "label": "Zeiterfassung",
+   "link_to": "HR Addon Settings",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "idx": 32,
+   "label": "Personal",
+   "link_to": "HR Settings",
+   "link_type": "DocType",
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-09-25 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "MSW Zeiterfassung",
+ "name": "Zeiterfassung",
+ "owner": "Administrator",
+ "standard": 1,
+ "title": "Zeiterfassung"
+}

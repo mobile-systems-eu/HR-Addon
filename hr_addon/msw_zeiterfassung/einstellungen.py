@@ -34,12 +34,22 @@ MELDUNG_SONN_FEIERTAG = (
 )
 
 FIELDS = [
+	# Erster Tab, nur mit vereinfachter Oberflaeche sichtbar: dann ordnet
+	# ein Property Setter (oberflaeche.FELDREIHENFOLGE) die Felder darunter.
+	# Ohne Schalter stuende er leer am Ende.
+	{
+		"fieldname": "msw_tab_arbeitstage",
+		"fieldtype": "Tab Break",
+		"label": "Arbeitstage",
+		"depends_on": "eval:doc.msw_vereinfachte_oberflaeche",
+		"insert_after": "repost_all_oles",
+	},
 	# -- Stempelregeln -------------------------------------------------
 	{
 		"fieldname": "msw_tab_stempelregeln",
 		"fieldtype": "Tab Break",
 		"label": "Stempelregeln",
-		"insert_after": "repost_all_oles",
+		"insert_after": "msw_tab_arbeitstage",
 	},
 	{
 		"fieldname": "msw_sec_sonn_feiertag",
@@ -89,7 +99,7 @@ FIELDS = [
 		"fieldname": "msw_sec_automatik",
 		"fieldtype": "Section Break",
 		"label": "Automatische Berechnung",
-		"insert_after": "msw_sonn_feiertag_hr_ausnahme",
+		"insert_after": "allow_workdays_on_holidays",
 	},
 	{
 		"fieldname": "msw_sofort_neu_berechnen",
@@ -121,6 +131,28 @@ FIELDS = [
 		"non_negative": 1,
 		"depends_on": "eval:doc.msw_tagesabschluss_aktiv",
 		"insert_after": "msw_tagesabschluss_aktiv",
+	},
+	# -- Oberflaeche ---------------------------------------------------
+	{
+		"fieldname": "msw_tab_oberflaeche",
+		"fieldtype": "Tab Break",
+		"label": "Oberfläche",
+		"insert_after": "msw_sonn_feiertag_hr_ausnahme",
+	},
+	{
+		"fieldname": "msw_vereinfachte_oberflaeche",
+		"fieldtype": "Check",
+		"label": "Vereinfachte Oberfläche für die Zeiterfassung",
+		"default": "1",
+		"description": (
+			"Blendet auf dem Desktop die HR-Bereiche aus, die MSW nicht nutzt "
+			"(Gehalt, Spesen, Recruiting, Leistung, Steuern, Betriebszugehörigkeit), "
+			"ebenso „Abwesenheiten“ und „Schicht & Anwesenheit“ – deren Inhalt steht "
+			"im Bereich „Zeiterfassung“. Blendet ungenutzte Einstellungen aus und "
+			"ordnet diese Seite in Tabs. Ausschalten stellt den Standard wieder her; "
+			"danach die Seite neu laden."
+		),
+		"insert_after": "msw_tab_oberflaeche",
 	},
 ]
 

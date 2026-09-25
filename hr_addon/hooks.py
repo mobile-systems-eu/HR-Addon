@@ -14,7 +14,12 @@ after_migrate = [
 	"hr_addon.hr_addon.doctype.workday.workday.create_background_job_for_workday_generation_after_install",
 	# MSW: Einstellungsfelder der Zeiterfassung, siehe msw_zeiterfassung/einstellungen.py
 	"hr_addon.msw_zeiterfassung.einstellungen.setup",
+	# MSW: vereinfachte Oberflaeche (abschaltbar), siehe msw_zeiterfassung/oberflaeche.py
+	"hr_addon.msw_zeiterfassung.oberflaeche.after_migrate",
 ]
+
+# MSW: HR-Bereiche ausblenden, die nicht genutzt werden (abschaltbar)
+boot_session = "hr_addon.msw_zeiterfassung.oberflaeche.boot_session"
 
 fixtures = [
 	{"dt": "Custom Field", "filters": [
@@ -38,6 +43,10 @@ doctype_js = {
 required_apps = ["hrms"]
 
 doc_events = {
+	# MSW: Schalter "Vereinfachte Oberflaeche" sofort wirksam machen
+	"HR Addon Settings": {
+		"on_update": "hr_addon.msw_zeiterfassung.oberflaeche.nach_speichern",
+	},
 	"Leave Application": {
 		"validate": "hr_addon.events.leave_application.validate_leave_application",
 		"on_change": "hr_addon.hr_addon.doctype.hr_addon_settings.hr_addon_settings.export_calendar",
