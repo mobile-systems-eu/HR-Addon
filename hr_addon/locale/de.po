@@ -1,0 +1,1864 @@
+# Deutsche Übersetzungen Zeiterfassung (hr_addon, hrms, erpnext) – MSW GmbH
+# Zielgruppe: Personalabteilung und Meister. Überschreibt Übersetzungen von
+# hrms/erpnext/frappe, da hr_addon nach diesen Apps geladen wird.
+# Einträge mit msgctxt gelten nur für Feldlabels/Optionen des genannten DocTypes.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hr_addon\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-25 21:35\n"
+"PO-Revision-Date: 2026-09-25 21:35\n"
+"Last-Translator: MSW GmbH\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. DocType-Namen hr_addon (global, eindeutig)
+#: hr_addon/hr_addon/doctype/*/*.json
+msgid "Workday"
+msgstr "Arbeitstag"
+
+msgid "Workdays"
+msgstr "Arbeitstage"
+
+msgid "Weekly Working Hours"
+msgstr "Sollarbeitszeit"
+
+msgid "Daily Hours Detail"
+msgstr "Tages-Sollstunden"
+
+msgid "Employee Checkins"
+msgstr "Stempelungen"
+
+msgid "Employee Item"
+msgstr "Mitarbeiter (Auswahl)"
+
+msgid "Half Day Holidays"
+msgstr "Halbe Feiertage"
+
+msgid "HR Addon Settings"
+msgstr "Zeiterfassung – Einstellungen"
+
+msgid "Minimum Break Rule"
+msgstr "Pausenregel"
+
+msgid "Overtime Ledger Entry"
+msgstr "Zeitkonto-Buchung"
+
+msgid "Overtime Ledger"
+msgstr "Zeitkonto"
+
+msgid "Overtime Payout"
+msgstr "Zeitkonto-Korrektur"
+
+msgid "Repost Employees OLE"
+msgstr "Mitarbeiter für Neuberechnung"
+
+msgid "Workday Creation Log"
+msgstr "Protokoll Arbeitstag"
+
+msgid "Workday Creation Log Checkin"
+msgstr "Protokoll Arbeitstag – Stempelung"
+
+msgid "Workday Generation Log"
+msgstr "Protokoll Arbeitstag-Erzeugung"
+
+msgid "Workday Generation Log Detail"
+msgstr "Protokoll Arbeitstag-Erzeugung – Mitarbeiter"
+
+msgid "HR Addon"
+msgstr "Zeiterfassung"
+
+msgid "Work Hour Report"
+msgstr "Arbeitszeitbericht"
+
+#. Arbeitstag-/Anwesenheitsstatus (global, weil Select-Werte in Listen/Berichten
+#. ohne Kontext übersetzt werden: formatters.Select -> __(value))
+msgid "Missing Checkin"
+msgstr "Stempelung fehlt"
+
+msgid "Not Workday"
+msgstr "Kein Arbeitstag"
+
+msgid "Pending Leave"
+msgstr "Abwesenheit beantragt"
+
+msgid "On Leave"
+msgstr "Abwesend (Urlaub)"
+
+msgid "Absent"
+msgstr "Fehlt"
+
+msgid "Half Day"
+msgstr "Halber Tag"
+
+msgid "Work From Home"
+msgstr "Mobiles Arbeiten"
+
+msgid "IN"
+msgstr "Kommen"
+
+msgid "OUT"
+msgstr "Gehen"
+
+msgid "Pay-out"
+msgstr "Auszahlung"
+
+msgid "Positive Adjustment"
+msgstr "Gutschrift"
+
+msgid "Negative Adjustment"
+msgstr "Abzug"
+
+msgid "Break Hours from Employee Checkins"
+msgstr "Pause aus Stempelungen"
+
+msgid "Break Hours from Weekly Working Hours"
+msgstr "Pause aus Sollarbeitszeit"
+
+msgid "Break Hours from Weekly Working Hours if Shorter breaks"
+msgstr "Pause aus Sollarbeitszeit, wenn gestempelte Pause kürzer"
+
+msgid "Break Hours from Minimum Break Rule"
+msgstr "Pause aus Pausenregel"
+
+msgid "Manual Button"
+msgstr "Manuell (Schaltfläche)"
+
+msgid "Partially Failed"
+msgstr "Teilweise fehlgeschlagen"
+
+#. DocType-Namen hrms/erpnext – Korrektur/Terminologie (global)
+#: hrms/hr/doctype/*/*.json
+msgid "Employee Checkin"
+msgstr "Stempelung"
+
+msgid "Shift Type"
+msgstr "Schicht"
+
+msgid "Shift Assignment"
+msgstr "Schichtzuweisung"
+
+msgid "Shift Request"
+msgstr "Schichtantrag"
+
+msgid "Shift Schedule"
+msgstr "Schichtplan"
+
+msgid "Shift Schedule Assignment"
+msgstr "Schichtplan-Zuweisung"
+
+msgid "Shift Assignment Tool"
+msgstr "Schichtzuweisung (mehrere Mitarbeiter)"
+
+msgid "Employee Attendance Tool"
+msgstr "Anwesenheit erfassen (mehrere Mitarbeiter)"
+
+msgid "Attendance Request"
+msgstr "Anwesenheitsantrag"
+
+msgid "Holiday List Assignment"
+msgstr "Feiertagsliste-Zuordnung"
+
+msgid "Leave Application"
+msgstr "Abwesenheitsantrag"
+
+msgid "Leave Allocation"
+msgstr "Urlaubsanspruch"
+
+msgid "Leave Type"
+msgstr "Abwesenheitsart"
+
+msgid "Leave Policy"
+msgstr "Urlaubsregelung"
+
+msgid "Leave Policy Detail"
+msgstr "Urlaubsregelung – Anspruch"
+
+msgid "Leave Policy Assignment"
+msgstr "Zuordnung Urlaubsregelung"
+
+msgid "Leave Encashment"
+msgstr "Urlaubsauszahlung"
+
+msgid "Leave Control Panel"
+msgstr "Urlaubsansprüche zuteilen (mehrere Mitarbeiter)"
+
+msgid "Leave Ledger Entry"
+msgstr "Urlaubskonto-Buchung"
+
+msgid "Leave Adjustment"
+msgstr "Urlaubskorrektur"
+
+msgid "Compensatory Leave Request"
+msgstr "Antrag auf Freizeitausgleich"
+
+msgid "Earned Leave Schedule"
+msgstr "Plan anteiliger Urlaubsaufbau"
+
+msgid "HR Settings"
+msgstr "Personal-Einstellungen"
+
+msgid "Overtime Type"
+msgstr "Überstundenart"
+
+msgid "Overtime Slip"
+msgstr "Überstundennachweis"
+
+msgid "Overtime"
+msgstr "Überstunden"
+
+msgid "Leave"
+msgstr "Abwesenheit"
+
+#. Abwesenheitsarten (Standard-Datensätze von hrms)
+#: hrms/setup.py
+msgid "Compensatory Off"
+msgstr "Freizeitausgleich"
+
+msgid "Casual Leave"
+msgstr "Sonderurlaub"
+
+msgid "Privilege Leave"
+msgstr "Erholungsurlaub (bezahlt)"
+
+msgid "Sick Leave"
+msgstr "Krankheit"
+
+#. Urlaub/Abwesenheit – Fachbegriffe (global)
+msgid "Leave Balance"
+msgstr "Resturlaub"
+
+msgid "Leave Balance Summary"
+msgstr "Resturlaub – Übersicht"
+
+msgid "Carry Forward"
+msgstr "Übertrag ins Folgejahr"
+
+msgid "Carry Forwarded Leaves"
+msgstr "Übertragene Urlaubstage"
+
+msgid "Add unused leaves from previous allocations"
+msgstr "Nicht genommenen Urlaub aus früheren Ansprüchen übertragen"
+
+msgid "Unused leaves"
+msgstr "Nicht genommene Urlaubstage"
+
+msgid "New Leaves Allocated"
+msgstr "Neu gewährte Urlaubstage"
+
+msgid "Total Leaves Allocated"
+msgstr "Urlaubsanspruch gesamt (Tage)"
+
+msgid "Total Leaves Encashed"
+msgstr "Ausgezahlte Urlaubstage"
+
+msgid "Total Leave Days"
+msgstr "Abwesenheitstage gesamt"
+
+msgid "Leave Balance Before Application"
+msgstr "Resturlaub vor Antrag"
+
+msgid "Leave(s) Allocated"
+msgstr "Gewährte Tage"
+
+msgid "Leave(s) Taken"
+msgstr "Genommene Tage"
+
+msgid "Leave(s) Expired"
+msgstr "Verfallene Tage"
+
+msgid "Late Entry"
+msgstr "Verspätetes Kommen"
+
+msgid "Early Exit"
+msgstr "Vorzeitiges Gehen"
+
+msgid "Late Entries"
+msgstr "Verspätetes Kommen"
+
+msgid "Early Exits"
+msgstr "Vorzeitiges Gehen"
+
+msgid "Total Late Entries"
+msgstr "Verspätetes Kommen gesamt"
+
+msgid "Total Early Exits"
+msgstr "Vorzeitiges Gehen gesamt"
+
+msgid "Late Entry By"
+msgstr "Verspätung (Dauer)"
+
+msgid "Early Exit By"
+msgstr "Vorzeitiges Gehen (Dauer)"
+
+msgid "In Time"
+msgstr "Kommen um"
+
+msgid "Out Time"
+msgstr "Gehen um"
+
+msgid "Total Absent"
+msgstr "Fehltage gesamt"
+
+msgid "Present Records"
+msgstr "Anwesend"
+
+msgid "Absent Records"
+msgstr "Fehlt"
+
+msgid "Half Day Records"
+msgstr "Halber Tag"
+
+msgid "Employees Working on a Holiday"
+msgstr "Arbeit an arbeitsfreien Tagen"
+
+msgid "Employee Hours Utilization"
+msgstr "Stundenauslastung (Zeiterfassung)"
+
+#. Berichte (Report-Namen) und Number Cards
+#: hrms/hr/report/*
+#: hrms/hr/number_card/*
+msgid "Monthly Attendance Sheet"
+msgstr "Monatliche Anwesenheitsübersicht"
+
+msgid "Employee Leave Balance"
+msgstr "Resturlaub je Mitarbeiter"
+
+msgid "Employee Leave Balance Summary"
+msgstr "Resturlaub – Übersicht je Mitarbeiter"
+
+msgid "Employees working on a holiday"
+msgstr "Arbeit an arbeitsfreien Tagen"
+
+msgid "Shift Attendance"
+msgstr "Anwesenheit je Schicht"
+
+msgid "Number of Employees on Leave (Today)"
+msgstr "Abwesende Mitarbeiter (heute)"
+
+msgid "Number of Employees on Leave (This Month)"
+msgstr "Abwesende Mitarbeiter (dieser Monat)"
+
+msgid "Holidays in this month"
+msgstr "Feiertage in diesem Monat"
+
+msgid "Total Present (This Month)"
+msgstr "Anwesenheitstage gesamt (dieser Monat)"
+
+msgid "Total Absent (This Month)"
+msgstr "Fehltage gesamt (dieser Monat)"
+
+msgid "Late Entry (This Month)"
+msgstr "Verspätetes Kommen (dieser Monat)"
+
+msgid "Early Exit (This Month)"
+msgstr "Vorzeitiges Gehen (dieser Monat)"
+
+msgid "Attendance Count"
+msgstr "Anzahl Anwesenheiten"
+
+msgid "Include Shift Attendance Without Checkins"
+msgstr "Schicht-Anwesenheit ohne Stempelungen einbeziehen"
+
+msgid "Consider Grace Period"
+msgstr "Toleranzzeit berücksichtigen"
+
+#: hr_addon/hr_addon/doctype/daily_hours_detail/daily_hours_detail.json
+msgctxt "Daily Hours Detail"
+msgid "Day"
+msgstr "Wochentag"
+
+msgctxt "Daily Hours Detail"
+msgid "Hours"
+msgstr "Sollstunden"
+
+msgctxt "Daily Hours Detail"
+msgid "Hour Time"
+msgstr "Sollstunden (hh:mm)"
+
+msgctxt "Daily Hours Detail"
+msgid "Break Minutes"
+msgstr "Pause (Min.)"
+
+msgctxt "Employee Checkins"
+msgid "Log Type"
+msgstr "Stempelart"
+
+msgctxt "Employee Checkins"
+msgid "Log Time"
+msgstr "Zeitpunkt"
+
+msgctxt "Employee Checkins"
+msgid "Skip Auto Attendance"
+msgstr "Nicht für automatische Anwesenheit verwenden"
+
+msgctxt "Half Day Holidays"
+msgid "Description"
+msgstr "Bezeichnung"
+
+msgctxt "HR Addon Settings"
+msgid "Name of calendar export ICS file"
+msgstr "Dateiname für Kalenderexport (ICS)"
+
+msgctxt "HR Addon Settings"
+msgid "ICS folder path"
+msgstr "Ordner für ICS-Datei"
+
+msgctxt "HR Addon Settings"
+msgid "Absolute Path of the folder in which the ICS file will be saved, for example: /home/xxxxxxxxxx/owncloud/calendar/. Make sure this folder is writable by frappe user. Leave this field empty if you want to make the file public."
+msgstr "Absoluter Pfad des Ordners, in dem die ICS-Datei gespeichert wird, z. B. /home/xxxxxxxxxx/owncloud/calendar/. Der Ordner muss für den Benutzer „frappe“ beschreibbar sein. Leer lassen, um die Datei öffentlich bereitzustellen."
+
+msgctxt "HR Addon Settings"
+msgid "Download ICS File"
+msgstr "ICS-Datei herunterladen"
+
+msgctxt "HR Addon Settings"
+msgid "Generate Workdays automatically"
+msgstr "Arbeitstage automatisch erzeugen"
+
+msgctxt "HR Addon Settings"
+msgid "Generate Workdays for past 7 days now"
+msgstr "Arbeitstage der letzten 7 Tage jetzt erzeugen"
+
+msgctxt "HR Addon Settings"
+msgid "It will be generated for every Employee"
+msgstr "Wird für alle Mitarbeiter erzeugt"
+
+msgctxt "HR Addon Settings"
+msgid "Day"
+msgstr "Wochentag"
+
+msgctxt "HR Addon Settings"
+msgid "Time"
+msgstr "Uhrzeit (Stunde)"
+
+msgctxt "HR Addon Settings"
+msgid "Enabled"
+msgstr "Aktiv"
+
+msgctxt "HR Addon Settings"
+msgid "Anniversary Notification"
+msgstr "Benachrichtigung Dienstjubiläum"
+
+msgctxt "HR Addon Settings"
+msgid "Anniversary Notification Email List"
+msgstr "Empfänger Jubiläumsbenachrichtigung"
+
+msgctxt "HR Addon Settings"
+msgid "Employees selected in this fields will receive all anniversary notification for employees in same company"
+msgstr "Die hier ausgewählten Mitarbeiter erhalten alle Jubiläumsbenachrichtigungen für Mitarbeiter desselben Unternehmens."
+
+msgctxt "HR Addon Settings"
+msgid "Anniversary Notification Email Recipient Role"
+msgstr "Empfängerrolle Jubiläumsbenachrichtigung"
+
+msgctxt "HR Addon Settings"
+msgid "Employees who has Role selected in this fields will receive all anniversary notification of employees in same company"
+msgstr "Mitarbeiter mit dieser Rolle erhalten alle Jubiläumsbenachrichtigungen für Mitarbeiter desselben Unternehmens."
+
+msgctxt "HR Addon Settings"
+msgid "Enable Work Anniversaries notification for Leave Approvers"
+msgstr "Jubiläumsbenachrichtigung an Abwesenheitsgenehmiger senden"
+
+msgctxt "HR Addon Settings"
+msgid "Employees who are leaver approver for other other employees will receive anniversary notification of their leave approvee"
+msgstr "Abwesenheitsgenehmiger erhalten Jubiläumsbenachrichtigungen für die Mitarbeiter, deren Abwesenheiten sie genehmigen."
+
+msgctxt "HR Addon Settings"
+msgid "Enable Work Anniversaries notification"
+msgstr "Benachrichtigung zu Dienstjubiläen aktivieren"
+
+msgctxt "HR Addon Settings"
+msgid "Notification (x days) before"
+msgstr "Benachrichtigung (x Tage) vorher"
+
+msgctxt "HR Addon Settings"
+msgid "Email Recipient Role and Leavers Approvers will receive advance notification (no. of  days selected in this field) "
+msgstr "Empfängerrolle und Abwesenheitsgenehmiger werden so viele Tage im Voraus benachrichtigt, wie hier angegeben."
+
+msgctxt "HR Addon Settings"
+msgid "Workday break Calculation Mechanism"
+msgstr "Pausenberechnung für Arbeitstage"
+
+msgctxt "HR Addon Settings"
+msgid "Swap Hours worked and Actual Working Hours"
+msgstr "Anwesenheit brutto und Iststunden tauschen"
+
+msgctxt "HR Addon Settings"
+msgid "Background Job Frequency"
+msgstr "Häufigkeit der Hintergrundverarbeitung"
+
+msgctxt "HR Addon Settings"
+msgid "Skip Workdays for Employees without Weekly Hours"
+msgstr "Keine Arbeitstage für Mitarbeiter ohne Sollarbeitszeit"
+
+msgctxt "HR Addon Settings"
+msgid "When enabled, automatic and manual workday generation will skip employees who do not have Weekly Working Hours configured. Only employees with defined Weekly Working Hours will have workdays created."
+msgstr "Wenn aktiviert, werden bei der automatischen und manuellen Erzeugung von Arbeitstagen Mitarbeiter ohne hinterlegte Sollarbeitszeit übersprungen. Arbeitstage entstehen nur für Mitarbeiter mit Sollarbeitszeit."
+
+msgctxt "HR Addon Settings"
+msgid "Break Calculation Logic Explanation"
+msgstr "Erläuterung der Pausenberechnung"
+
+msgctxt "HR Addon Settings"
+msgid "Allow Workdays on Holidays"
+msgstr "Arbeitstage an Feiertagen zulassen"
+
+msgctxt "HR Addon Settings"
+msgid "Minimum Break Rule"
+msgstr "Pausenregeln"
+
+msgctxt "HR Addon Settings"
+msgid "Used to auto-fill Weekly Working Hours > Hours > Break Minutes when the value is 0. If users edit Break Minutes manually, it cannot be saved below the matching minimum rule."
+msgstr "Füllt in der Sollarbeitszeit (Tabelle Sollstunden) die Pause (Min.) automatisch aus, wenn dort 0 steht. Manuell eingetragene Pausen dürfen nicht unter der passenden Mindestpause liegen."
+
+msgctxt "HR Addon Settings"
+msgid "Minimum Break Rules"
+msgstr "Pausen"
+
+msgctxt "HR Addon Settings"
+msgid "Dates that count as half-day holidays. On these days, target working hours are 50% of the employee’s normal daily target (e.g. 24 Dec, 31 Dec). This avoids treating half a day’s work as full overtime or as missing hours.\n"
+msgstr "Tage, die als halbe Feiertage zählen. An diesen Tagen betragen die Sollstunden 50 % der üblichen täglichen Sollstunden (z. B. 24.12., 31.12.). So wird ein halber Arbeitstag weder als volle Überstunden noch als Fehlstunden gewertet.\n"
+
+msgctxt "HR Addon Settings"
+msgid "Overtime Hours Frozen Upto"
+msgstr "Zeitkonto abgeschlossen bis"
+
+msgctxt "HR Addon Settings"
+msgid "Entries on or before this date are frozen (cannot be created or modified). Reposting recalculates balances only for entries after this date. Changing this date and saving will prompt to repost all Overtime Ledger entries."
+msgstr "Buchungen bis einschließlich dieses Datums sind gesperrt (können weder angelegt noch geändert werden). Die Neuberechnung berücksichtigt nur Buchungen nach diesem Datum. Wird das Datum geändert und gespeichert, erscheint die Abfrage, alle Zeitkonto-Buchungen neu zu berechnen."
+
+msgctxt "HR Addon Settings"
+msgid "Optional: repost only for selected employees. Leave empty to repost all employees with overtime entries."
+msgstr "Optional: nur für die ausgewählten Mitarbeiter neu berechnen. Leer lassen, um alle Mitarbeiter mit Zeitkonto-Buchungen neu zu berechnen."
+
+msgctxt "HR Addon Settings"
+msgid "Repost All Overtime Ledger Entries"
+msgstr "Alle Zeitkonto-Buchungen neu berechnen"
+
+msgctxt "HR Addon Settings"
+msgid "Recalculate balances for all Overtime Ledger entries after the frozen date."
+msgstr "Salden aller Zeitkonto-Buchungen nach dem Abschlussdatum neu berechnen."
+
+msgctxt "HR Addon Settings"
+msgid "Enable Overtime Ledger Feature"
+msgstr "Zeitkonto aktivieren"
+
+#: hr_addon/hr_addon/doctype/minimum_break_rule/minimum_break_rule.json
+msgctxt "Minimum Break Rule"
+msgid "From Hours"
+msgstr "Ab Stunden"
+
+msgctxt "Minimum Break Rule"
+msgid "To Hours"
+msgstr "Bis Stunden"
+
+msgctxt "Minimum Break Rule"
+msgid "Minimum Break Minutes"
+msgstr "Mindestpause (Min.)"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Target Hours"
+msgstr "Sollstunden"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Actual Hours"
+msgstr "Iststunden"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Hour Variance"
+msgstr "Abweichung (Std.)"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Balance Before"
+msgstr "Saldo vorher (Std.)"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Balance After"
+msgstr "Saldo nachher (Std.)"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Voucher Type"
+msgstr "Belegart"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Voucher No"
+msgstr "Beleg-Nr."
+
+msgctxt "Overtime Ledger Entry"
+msgid "Is Cancelled"
+msgstr "Storniert"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Remarks"
+msgstr "Bemerkungen"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Basic Details"
+msgstr "Grunddaten"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Date Time Details         "
+msgstr "Datum und Uhrzeit"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Working Hours Details"
+msgstr "Soll-/Iststunden"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Balance Details"
+msgstr "Saldo"
+
+msgctxt "Overtime Ledger Entry"
+msgid "Reference Details"
+msgstr "Herkunft"
+
+msgctxt "Overtime Ledger Entry"
+msgid "More Information"
+msgstr "Weitere Informationen"
+
+msgctxt "Overtime Payout"
+msgid "Purpose"
+msgstr "Art der Korrektur"
+
+msgctxt "Overtime Payout"
+msgid "Pay-out and Negative Adjustment reduce the overtime balance (positive hours = amount to subtract). Positive Adjustment increases the balance (positive hours = amount to add).\","
+msgstr "Auszahlung und Abzug verringern das Zeitkonto (positive Stunden = abzuziehende Stunden). Gutschrift erhöht das Zeitkonto (positive Stunden = hinzuzufügende Stunden)."
+
+msgctxt "Overtime Payout"
+msgid "Current Overtime Balance"
+msgstr "Aktueller Zeitkontostand"
+
+msgctxt "Overtime Payout"
+msgid "Overtime Balance after Submit"
+msgstr "Zeitkontostand nach Buchung"
+
+#: hr_addon/hr_addon/doctype/weekly_working_hours/weekly_working_hours.json
+msgctxt "Weekly Working Hours"
+msgid "Hour Title"
+msgstr "Bezeichnung"
+
+msgctxt "Weekly Working Hours"
+msgid "From Date"
+msgstr "Gültig ab"
+
+msgctxt "Weekly Working Hours"
+msgid "To Date"
+msgstr "Gültig bis"
+
+msgctxt "Weekly Working Hours"
+msgid "Note"
+msgstr "Bemerkung"
+
+msgctxt "Weekly Working Hours"
+msgid "Total Work Hours"
+msgstr "Wochenstunden gesamt"
+
+msgctxt "Weekly Working Hours"
+msgid "Hours"
+msgstr "Sollstunden je Wochentag"
+
+msgctxt "Weekly Working Hours"
+msgid "No break hours if target hours is less than 6 hours"
+msgstr "Keine Pause abziehen, wenn Sollstunden unter 6 Std."
+
+msgctxt "Weekly Working Hours"
+msgid "Set Target Hours to Zero when date is holiday"
+msgstr "Sollstunden an Feiertagen auf 0 setzen"
+
+msgctxt "Workday"
+msgid "Target Hours"
+msgstr "Sollstunden"
+
+msgctxt "Workday"
+msgid "Hours worked"
+msgstr "Anwesenheit brutto (Std.)"
+
+msgctxt "Workday"
+msgid "Break Hours"
+msgstr "Pause (Std.)"
+
+msgctxt "Workday"
+msgid "First Checkin"
+msgstr "Erstes Kommen"
+
+msgctxt "Workday"
+msgid "Last Checkout"
+msgstr "Letztes Gehen"
+
+msgctxt "Workday"
+msgid "Actual Working Hours"
+msgstr "Iststunden"
+
+msgctxt "Workday"
+msgid "Expected Break Hours"
+msgstr "Soll-Pause (Std.)"
+
+msgctxt "Workday Creation Log"
+msgid "Log Date"
+msgstr "Datum"
+
+msgctxt "Workday Creation Log"
+msgid "Creation Time"
+msgstr "Erstellt am"
+
+msgctxt "Workday Creation Log"
+msgid "Checkin Details"
+msgstr "Stempelungen"
+
+msgctxt "Workday Creation Log"
+msgid "Checkins Found"
+msgstr "Gefundene Stempelungen"
+
+msgctxt "Workday Creation Log"
+msgid "Total checkins found for this date"
+msgstr "Anzahl Stempelungen an diesem Tag"
+
+msgctxt "Workday Creation Log"
+msgid "Checkins Processed"
+msgstr "Verarbeitete Stempelungen"
+
+msgctxt "Workday Creation Log"
+msgid "Checkins actually processed (paired IN/OUT)"
+msgstr "Tatsächlich verarbeitete Stempelungen (Kommen/Gehen-Paare)"
+
+msgctxt "Workday Creation Log"
+msgid "First Check-in"
+msgstr "Erstes Kommen"
+
+msgctxt "Workday Creation Log"
+msgid "Last Checkout"
+msgstr "Letztes Gehen"
+
+msgctxt "Workday Creation Log"
+msgid "Calculated Values"
+msgstr "Berechnete Werte"
+
+msgctxt "Workday Creation Log"
+msgid "Hours Worked"
+msgstr "Anwesenheit brutto (Std.)"
+
+msgctxt "Workday Creation Log"
+msgid "Break Hours"
+msgstr "Pause (Std.)"
+
+msgctxt "Workday Creation Log"
+msgid "Expected Break Hours"
+msgstr "Soll-Pause (Std.)"
+
+msgctxt "Workday Creation Log"
+msgid "Actual Working Hours"
+msgstr "Iststunden"
+
+msgctxt "Workday Creation Log"
+msgid "Target Hours"
+msgstr "Sollstunden"
+
+msgctxt "Workday Creation Log"
+msgid "Manual Workday"
+msgstr "Manuell angelegt"
+
+msgctxt "Workday Creation Log"
+msgid "Workday Status"
+msgstr "Status Arbeitstag"
+
+msgctxt "Workday Creation Log"
+msgid "Is Holiday"
+msgstr "Arbeitsfreier Tag"
+
+msgctxt "Workday Creation Log"
+msgid "Is On Leave"
+msgstr "Abwesend"
+
+msgctxt "Workday Creation Log"
+msgid "Error Details"
+msgstr "Fehlerdetails"
+
+msgctxt "Workday Creation Log"
+msgid "Traceback"
+msgstr "Technische Fehlerdetails"
+
+msgctxt "Workday Creation Log Checkin"
+msgid "Log Type"
+msgstr "Stempelart"
+
+msgctxt "Workday Creation Log Checkin"
+msgid "Log Time"
+msgstr "Zeitpunkt"
+
+msgctxt "Workday Creation Log Checkin"
+msgid "Skip Auto Attendance"
+msgstr "Nicht für automatische Anwesenheit verwenden"
+
+msgctxt "Workday Creation Log Checkin"
+msgid "Processed"
+msgstr "Verarbeitet"
+
+msgctxt "Workday Creation Log Checkin"
+msgid "Whether this checkin was processed in workday calculation"
+msgstr "Gibt an, ob diese Stempelung in die Berechnung des Arbeitstags eingeflossen ist"
+
+#: hr_addon/hr_addon/doctype/workday_generation_log/workday_generation_log.json
+msgctxt "Workday Generation Log"
+msgid "Execution Info"
+msgstr "Ausführung"
+
+msgctxt "Workday Generation Log"
+msgid "Execution Time"
+msgstr "Ausgeführt am"
+
+msgctxt "Workday Generation Log"
+msgid "Execution Type"
+msgstr "Auslöser"
+
+msgctxt "Workday Generation Log"
+msgid "Scheduled Job"
+msgstr "Zeitgesteuert"
+
+msgctxt "Workday Generation Log"
+msgid "API Call"
+msgstr "Schnittstelle (API)"
+
+msgctxt "Workday Generation Log"
+msgid "Running"
+msgstr "Läuft"
+
+msgctxt "Workday Generation Log"
+msgid "Duration (seconds)"
+msgstr "Dauer (Sek.)"
+
+msgctxt "Workday Generation Log"
+msgid "Duration in seconds"
+msgstr "Dauer in Sekunden"
+
+msgctxt "Workday Generation Log"
+msgid "Total Employees Processed"
+msgstr "Verarbeitete Mitarbeiter"
+
+msgctxt "Workday Generation Log"
+msgid "Total Dates Processed"
+msgstr "Verarbeitete Tage"
+
+msgctxt "Workday Generation Log"
+msgid "Workdays Created"
+msgstr "Angelegte Arbeitstage"
+
+msgctxt "Workday Generation Log"
+msgid "Workdays Failed"
+msgstr "Fehlgeschlagene Arbeitstage"
+
+msgctxt "Workday Generation Log"
+msgid "Employee Details"
+msgstr "Mitarbeiter"
+
+msgctxt "Workday Generation Log"
+msgid "Employee Logs"
+msgstr "Protokoll je Mitarbeiter"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Dates Processing"
+msgstr "Verarbeitete Tage"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Unmarked Days"
+msgstr "Tage ohne Anwesenheit"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Total unmarked days found for this employee"
+msgstr "Anzahl Tage ohne Anwesenheit für diesen Mitarbeiter"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Workdays Created"
+msgstr "Angelegte Arbeitstage"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Workdays Failed"
+msgstr "Fehlgeschlagene Arbeitstage"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Checkins Info"
+msgstr "Stempelungen"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Checkins Found"
+msgstr "Gefundene Stempelungen"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Total checkins found for all dates"
+msgstr "Anzahl Stempelungen über alle Tage"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Checkins Processed"
+msgstr "Verarbeitete Stempelungen"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Checkins that were actually processed in workdays"
+msgstr "Stempelungen, die tatsächlich in Arbeitstage eingeflossen sind"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Absence Reasons"
+msgstr "Gründe für fehlende Arbeitstage"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Dates with No Checkins"
+msgstr "Tage ohne Stempelung"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Number of dates where no checkins were found"
+msgstr "Anzahl Tage ohne Stempelung"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Dates with Incomplete Checkins"
+msgstr "Tage mit unvollständigen Stempelungen"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Number of dates where checkins were found but incomplete (odd number)"
+msgstr "Anzahl Tage mit unvollständigen Stempelungen (ungerade Anzahl, Kommen oder Gehen fehlt)"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Dates on Leave"
+msgstr "Tage mit Abwesenheit"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Number of dates where employee was on leave"
+msgstr "Anzahl Tage, an denen der Mitarbeiter abwesend war"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Dates on Holiday"
+msgstr "Arbeitsfreie Tage"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Number of dates that were holidays"
+msgstr "Anzahl arbeitsfreier Tage (Feiertage/Ruhetage)"
+
+msgctxt "Workday Generation Log Detail"
+msgid "Error Details"
+msgstr "Fehlerdetails"
+
+#: hrms/hr/doctype/employee_checkin/employee_checkin.json
+msgctxt "Employee Checkin"
+msgid "Log Type"
+msgstr "Stempelart"
+
+msgctxt "Employee Checkin"
+msgid "Time"
+msgstr "Zeitpunkt"
+
+msgctxt "Employee Checkin"
+msgid "Skip Auto Attendance"
+msgstr "Nicht für automatische Anwesenheit verwenden"
+
+msgctxt "Employee Checkin"
+msgid "Attendance Marked"
+msgstr "Zugehörige Anwesenheit"
+
+msgctxt "Employee Checkin"
+msgid "Shift Actual Start"
+msgstr "Schichtbeginn inkl. Stempelfenster"
+
+msgctxt "Employee Checkin"
+msgid "Shift Actual End"
+msgstr "Schichtende inkl. Stempelfenster"
+
+msgctxt "Employee Checkin"
+msgid "Latitude"
+msgstr "Breitengrad"
+
+msgctxt "Employee Checkin"
+msgid "Location / Device ID"
+msgstr "Standort / Stempeluhr-ID"
+
+msgctxt "Attendance"
+msgid "Status for Other Half"
+msgstr "Status der anderen Tageshälfte"
+
+msgctxt "Attendance"
+msgid "Standard Working Hours"
+msgstr "Regelarbeitszeit (Std.)"
+
+msgctxt "Attendance"
+msgid "Actual Overtime Duration"
+msgstr "Tatsächliche Überstunden (Std.)"
+
+#: hrms/hr/doctype/shift_type/shift_type.json
+msgctxt "Shift Type"
+msgid "Determine Check-in and Check-out"
+msgstr "Kommen/Gehen bestimmen"
+
+msgctxt "Shift Type"
+msgid "Alternating entries as IN and OUT during the same shift"
+msgstr "Abwechselnd als Kommen und Gehen innerhalb derselben Schicht"
+
+msgctxt "Shift Type"
+msgid "Strictly based on Log Type in Employee Checkin"
+msgstr "Streng nach Stempelart der Stempelung"
+
+msgctxt "Shift Type"
+msgid "Working Hours Calculation Based On"
+msgstr "Arbeitszeitberechnung nach"
+
+msgctxt "Shift Type"
+msgid "First Check-in and Last Check-out"
+msgstr "Erstes Kommen und letztes Gehen"
+
+msgctxt "Shift Type"
+msgid "Every Valid Check-in and Check-out"
+msgstr "Jedes gültige Kommen/Gehen-Paar"
+
+msgctxt "Shift Type"
+msgid "Working Hours Threshold for Absent"
+msgstr "Arbeitszeitschwelle für „Fehlt“"
+
+msgctxt "Shift Type"
+msgid "Working hours below which Half Day is marked. (Zero to disable)"
+msgstr "Arbeitszeit, unterhalb der ein halber Tag erfasst wird (0 = deaktiviert)."
+
+msgctxt "Shift Type"
+msgid "Working hours below which Absent is marked. (Zero to disable)"
+msgstr "Arbeitszeit, unterhalb der „Fehlt“ erfasst wird (0 = deaktiviert)."
+
+msgctxt "Shift Type"
+msgid "Begin check-in before shift start time (in minutes)"
+msgstr "Kommen frühestens vor Schichtbeginn (Minuten)"
+
+msgctxt "Shift Type"
+msgid "The time before the shift start time during which Employee Check-in is considered for attendance."
+msgstr "Zeitraum vor Schichtbeginn, in dem Stempelungen für die Anwesenheit berücksichtigt werden."
+
+msgctxt "Shift Type"
+msgid "Late Entry Grace Period"
+msgstr "Toleranz verspätetes Kommen (Minuten)"
+
+msgctxt "Shift Type"
+msgid "The time after the shift start time when check-in is considered as late (in minutes)."
+msgstr "Minuten nach Schichtbeginn, ab denen ein Kommen als verspätet gilt."
+
+msgctxt "Shift Type"
+msgid "Early Exit Grace Period"
+msgstr "Toleranz vorzeitiges Gehen (Minuten)"
+
+msgctxt "Shift Type"
+msgid "The time before the shift end time when check-out is considered as early (in minutes)."
+msgstr "Minuten vor Schichtende, ab denen ein Gehen als vorzeitig gilt."
+
+msgctxt "Shift Type"
+msgid "Allow check-out after shift end time (in minutes)"
+msgstr "Gehen nach Schichtende berücksichtigen (Minuten)"
+
+msgctxt "Shift Type"
+msgid "Time after the end of shift during which check-out is considered for attendance."
+msgstr "Zeitraum nach Schichtende, in dem Gehen-Stempelungen für die Anwesenheit berücksichtigt werden."
+
+msgctxt "Shift Type"
+msgid "Auto Attendance Settings"
+msgstr "Automatische Anwesenheit"
+
+msgctxt "Shift Type"
+msgid "Late Entry & Early Exit Settings for Auto Attendance"
+msgstr "Verspätetes Kommen & vorzeitiges Gehen"
+
+msgctxt "Shift Type"
+msgid "Mark attendance based on 'Employee Checkin' for Employees assigned to this shift."
+msgstr "Anwesenheit für Mitarbeiter dieser Schicht automatisch aus den Stempelungen erstellen."
+
+msgctxt "Shift Type"
+msgid "Attendance will be marked automatically only after this date."
+msgstr "Anwesenheit wird erst nach diesem Datum automatisch erstellt."
+
+msgctxt "Shift Type"
+msgid "Last Sync of Checkin"
+msgstr "Letzte Übernahme der Stempelungen"
+
+msgctxt "Shift Type"
+msgid "Last Known Successful Sync of Employee Checkin. Reset this only if you are sure that all Logs are synced from all the locations. Please don't modify this if you are unsure."
+msgstr "Zeitpunkt der letzten erfolgreichen Übernahme der Stempelungen. Nur zurücksetzen, wenn sicher ist, dass alle Stempelungen aller Standorte übertragen wurden. Im Zweifel nicht ändern."
+
+msgctxt "Shift Type"
+msgid "If enabled, auto attendance will be marked on holidays if Employee Checkins exist"
+msgstr "Wenn aktiviert, wird an arbeitsfreien Tagen automatisch Anwesenheit erfasst, sofern Stempelungen vorhanden sind."
+
+msgctxt "Shift Type"
+msgid "Enable Late Entry Marking"
+msgstr "Verspätetes Kommen kennzeichnen"
+
+msgctxt "Shift Type"
+msgid "Enable Early Exit Marking"
+msgstr "Vorzeitiges Gehen kennzeichnen"
+
+msgctxt "Shift Type"
+msgid "Automatically update Last Sync of Checkin"
+msgstr "Letzte Übernahme der Stempelungen automatisch aktualisieren"
+
+msgctxt "Shift Type"
+msgid "Recommended for a single biometric device / checkins via mobile app"
+msgstr "Empfohlen bei nur einer Stempeluhr oder Stempelung per mobiler App"
+
+#: hrms/hr/doctype/shift_assignment/shift_assignment.json
+msgctxt "Shift Assignment"
+msgid "Shift Details"
+msgstr "Schicht-Details"
+
+#: hrms/hr/doctype/leave_application/leave_application.json
+msgctxt "Leave Application"
+msgid "Dates & Reason"
+msgstr "Zeitraum & Grund"
+
+msgctxt "Leave Application"
+msgid "Half Day Date"
+msgstr "Datum des halben Tages"
+
+msgctxt "Leave Application"
+msgid "Follow via Email"
+msgstr "Benachrichtigung per E-Mail"
+
+msgctxt "Leave Application"
+msgid "Other Details"
+msgstr "Weitere Angaben"
+
+#: hrms/hr/doctype/leave_allocation/leave_allocation.json
+msgctxt "Leave Allocation"
+msgid "Allocation"
+msgstr "Anspruch"
+
+#: hrms/hr/doctype/leave_type/leave_type.json
+msgctxt "Leave Type"
+msgid "Leave Type Name"
+msgstr "Bezeichnung der Abwesenheitsart"
+
+msgctxt "Leave Type"
+msgid "Maximum Leave Allocation Allowed per Leave Period"
+msgstr "Max. Anspruch je Urlaubszeitraum (Tage)"
+
+msgctxt "Leave Type"
+msgid "Allow Leave Application After (Calendar Days)"
+msgstr "Antrag möglich ab (Kalendertage nach Eintritt)"
+
+msgctxt "Leave Type"
+msgid "Minimum calendar days required since Date of Joining to apply for this leave"
+msgstr "Mindestanzahl Kalendertage seit Eintrittsdatum, bevor diese Abwesenheit beantragt werden kann"
+
+msgctxt "Leave Type"
+msgid "Maximum Consecutive Leaves Allowed"
+msgstr "Max. zusammenhängende Abwesenheitstage"
+
+msgctxt "Leave Type"
+msgid "Is Carry Forward"
+msgstr "Übertrag ins Folgejahr erlaubt"
+
+msgctxt "Leave Type"
+msgid "Is Leave Without Pay"
+msgstr "Unbezahlt"
+
+msgctxt "Leave Type"
+msgid "Is Optional Leave"
+msgstr "Optionaler freier Tag"
+
+msgctxt "Leave Type"
+msgid "Allow Negative Balance"
+msgstr "Negativen Resturlaub zulassen"
+
+msgctxt "Leave Type"
+msgid "Include holidays within leaves as leaves"
+msgstr "Feiertage innerhalb einer Abwesenheit mitzählen"
+
+msgctxt "Leave Type"
+msgid "Is Compensatory"
+msgstr "Freizeitausgleich"
+
+msgctxt "Leave Type"
+msgid "Expire Carry Forwarded Leaves (Days)"
+msgstr "Übertragene Urlaubstage verfallen nach (Tagen)"
+
+msgctxt "Leave Type"
+msgid "Encashment"
+msgstr "Auszahlung"
+
+msgctxt "Leave Type"
+msgid "Allow Encashment"
+msgstr "Auszahlung erlauben"
+
+msgctxt "Leave Type"
+msgid "Earning Component"
+msgstr "Lohnart für Auszahlung"
+
+msgctxt "Leave Type"
+msgid "Earned Leave"
+msgstr "Anteiliger Urlaubsaufbau"
+
+msgctxt "Leave Type"
+msgid "Is Earned Leave"
+msgstr "Anspruch wird anteilig aufgebaut"
+
+msgctxt "Leave Type"
+msgid "Earned Leave Frequency"
+msgstr "Rhythmus des Urlaubsaufbaus"
+
+msgctxt "Leave Type"
+msgid "Maximum Carry Forwarded Leaves"
+msgstr "Max. übertragbare Urlaubstage"
+
+msgctxt "Leave Type"
+msgid "Is Partially Paid Leave"
+msgstr "Teilweise bezahlt"
+
+msgctxt "Leave Type"
+msgid "Fraction of Daily Salary per Leave"
+msgstr "Anteil des Tagesentgelts je Abwesenheitstag"
+
+msgctxt "Leave Type"
+msgid "Allow Over Allocation"
+msgstr "Anspruch über Zeitraum hinaus zulassen"
+
+msgctxt "Leave Type"
+msgid "Allocate on Day"
+msgstr "Zuteilung am"
+
+msgctxt "Leave Type"
+msgid "Maximum Encashable Leaves"
+msgstr "Max. auszahlbare Urlaubstage"
+
+msgctxt "Leave Type"
+msgid "Non-Encashable Leaves"
+msgstr "Nicht auszahlbare Urlaubstage"
+
+#: hrms/hr/doctype/leave_policy/leave_policy.json
+msgctxt "Leave Policy"
+msgid "Leave Allocations"
+msgstr "Urlaubsansprüche"
+
+msgctxt "Leave Policy"
+msgid "Leave Policy Details"
+msgstr "Ansprüche je Abwesenheitsart"
+
+msgctxt "Leave Policy"
+msgid "Leave Policy Name"
+msgstr "Bezeichnung der Urlaubsregelung"
+
+#: hrms/hr/doctype/leave_policy_detail/leave_policy_detail.json
+msgctxt "Leave Policy Detail"
+msgid "Annual Allocation"
+msgstr "Jahresanspruch (Tage)"
+
+#: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.json
+msgctxt "Leave Policy Assignment"
+msgid "Assignment based on"
+msgstr "Zuordnung nach"
+
+msgctxt "Leave Policy Assignment"
+msgid "Joining Date"
+msgstr "Eintrittsdatum"
+
+#: hrms/hr/doctype/holiday_list_assignment/holiday_list_assignment.json
+msgctxt "Holiday List Assignment"
+msgid "Assigned To"
+msgstr "Zugeordnet zu"
+
+msgctxt "Holiday List Assignment"
+msgid "Holiday List Start"
+msgstr "Beginn der Feiertagsliste"
+
+msgctxt "Holiday List Assignment"
+msgid "Holiday List End"
+msgstr "Ende der Feiertagsliste"
+
+msgctxt "Holiday List Assignment"
+msgid "Assignment Starts From"
+msgstr "Zuordnung gültig ab"
+
+#: hrms/hr/doctype/hr_settings/hr_settings.json
+#. nur Tabs Employee, Leaves, Shift and Attendance
+msgctxt "HR Settings"
+msgid "Employee Naming By"
+msgstr "Mitarbeiter-ID vergeben nach"
+
+msgctxt "HR Settings"
+msgid "Leave Approver Mandatory In Leave Application"
+msgstr "Abwesenheitsgenehmiger im Abwesenheitsantrag ist Pflicht"
+
+msgctxt "HR Settings"
+msgid "Auto Leave Encashment"
+msgstr "Automatische Urlaubsauszahlung"
+
+msgctxt "HR Settings"
+msgid "Role Allowed to Create Backdated Leave Application"
+msgstr "Rolle, die rückdatierte Abwesenheitsanträge anlegen darf"
+
+msgctxt "HR Settings"
+msgid "Leave Approval Notification Template"
+msgstr "E-Mail-Vorlage: Genehmigungsanfrage Abwesenheit"
+
+msgctxt "HR Settings"
+msgid "Leave Status Notification Template"
+msgstr "E-Mail-Vorlage: Statusänderung Abwesenheitsantrag"
+
+msgctxt "HR Settings"
+msgid "Standard Working Hours"
+msgstr "Regelarbeitszeit pro Tag (Std.)"
+
+msgctxt "HR Settings"
+msgid "Holidays"
+msgstr "Feiertage"
+
+msgctxt "HR Settings"
+msgid "Allow Employee Checkin from Mobile App"
+msgstr "Stempeln über die mobile App zulassen"
+
+msgctxt "HR Settings"
+msgid "Prevent self approval for leaves even if user has permissions"
+msgstr "Eigene Abwesenheitsanträge nicht selbst genehmigen, auch bei vorhandener Berechtigung"
+
+msgctxt "HR Settings"
+msgid "Shift and Attendance"
+msgstr "Schicht und Anwesenheit"
+
+msgctxt "HR Settings"
+msgid "Leave Settings"
+msgstr "Abwesenheitseinstellungen"
+
+#: erpnext/setup/doctype/holiday_list/holiday_list.json
+msgctxt "Holiday List"
+msgid "Add Weekly Holidays"
+msgstr "Wöchentliche Ruhetage hinzufügen"
+
+msgctxt "Holiday List"
+msgid "Weekly Off"
+msgstr "Wöchentlicher Ruhetag"
+
+msgctxt "Holiday List"
+msgid "Subdivision"
+msgstr "Bundesland / Region"
+
+msgctxt "Holiday List"
+msgid "Is Half Day"
+msgstr "Halber Tag"
+
+#: erpnext/setup/doctype/holiday/holiday.json
+msgctxt "Holiday"
+msgid "Weekly Off"
+msgstr "Wöchentlicher Ruhetag"
+
+msgctxt "Holiday"
+msgid "Is Half Day"
+msgstr "Halber Tag"
+
+#: erpnext/setup/doctype/employee/employee.json
+#: hrms/setup.py (Custom Fields an Employee)
+#: hr_addon/fixtures/custom_field.json
+msgctxt "Employee"
+msgid "Attendance Device ID (Biometric/RF tag ID)"
+msgstr "Stempel-ID (Chip/Karte)"
+
+msgctxt "Employee"
+msgid "Attendance & Leaves"
+msgstr "Anwesenheit & Abwesenheit"
+
+msgctxt "Employee"
+msgid "Applicable Holiday List"
+msgstr "Für diesen Mitarbeiter gültige Feiertagsliste"
+
+msgctxt "Employee"
+msgid "Approvers"
+msgstr "Genehmiger"
+
+msgctxt "Employee"
+msgid "Permanent"
+msgstr "Unbefristet"
+
+msgctxt "Employee"
+msgid "Total Work Hours"
+msgstr "Wochenstunden gesamt"
+
+msgctxt "Employee"
+msgid "Overtime Ledger Details"
+msgstr "Zeitkonto"
+
+msgctxt "Employee"
+msgid "Current Overtime Hours"
+msgstr "Aktueller Zeitkontostand (Std.)"
+
+msgctxt "Employee"
+msgid "Overtime Ledger Entry"
+msgstr "Letzte Zeitkonto-Buchung"
+
+msgctxt "Employee"
+msgid "Left"
+msgstr "Ausgeschieden"
+
+#: hr_addon/fixtures/custom_field.json
+msgctxt "Attendance"
+msgid "Working Hours Details"
+msgstr "Soll-/Iststunden"
+
+msgctxt "Attendance"
+msgid "Target Hours"
+msgstr "Sollstunden"
+
+msgctxt "Attendance"
+msgid "Actual Working Hours"
+msgstr "Iststunden"
+
+msgctxt "Attendance"
+msgid "Hour Variance"
+msgstr "Abweichung (Std.)"
+
+msgctxt "Attendance"
+msgid "Create Overtime Ledger Entry"
+msgstr "Zeitkonto-Buchung anlegen"
+
+msgctxt "Attendance"
+msgid "Auto-create ledger on submit"
+msgstr "Beim Buchen automatisch eine Zeitkonto-Buchung anlegen"
+
+#: hr_addon/fixtures/custom_field.json
+msgctxt "Leave Type"
+msgid "Is Deducted From Overtime Ledger"
+msgstr "Wird vom Zeitkonto abgezogen"
+
+#: hr_addon/events/attendance.py:105
+msgid "Overtime Ledger Entry already exists for this Attendance: {0}"
+msgstr "Für diese Anwesenheit existiert bereits eine Zeitkonto-Buchung: {0}"
+
+#: hr_addon/events/attendance.py:165
+msgid "Overtime Ledger Entry {0} created: +{1} hours (Balance: {2} hours)"
+msgstr "Zeitkonto-Buchung {0} angelegt: +{1} Std. (Saldo: {2} Std.)"
+
+#: hr_addon/events/attendance.py:169
+msgid "Overtime Ledger Entry {0} created: {1} hours (Balance: {2} hours)"
+msgstr "Zeitkonto-Buchung {0} angelegt: {1} Std. (Saldo: {2} Std.)"
+
+#: hr_addon/events/attendance.py:176
+msgid "No hour variance to record. Actual hours ({0}) equals target hours ({1})"
+msgstr "Keine Abweichung zu buchen. Iststunden ({0}) entsprechen den Sollstunden ({1})."
+
+#: hr_addon/events/attendance.py:216 hr_addon/hr_addon/doctype/overtime_ledger_entry/overtime_ledger_entry.py:19
+msgid "Overtime Ledger Entry {0} is already cancelled"
+msgstr "Zeitkonto-Buchung {0} ist bereits storniert"
+
+#: hr_addon/events/attendance.py:250
+msgid "Reversal Overtime Ledger Entry {0} created (reversed {1} hours)"
+msgstr "Gegenbuchung {0} im Zeitkonto angelegt ({1} Std. zurückgebucht)"
+
+#: hr_addon/events/attendance.py:288
+msgid "Cleared attendance reference in Workday {0}"
+msgstr "Verweis auf die Anwesenheit im Arbeitstag {0} entfernt"
+
+#: hr_addon/events/leave_application.py:193
+msgid "Reversal Overtime Ledger Entry created (restored {0} hours) for Workday {1}"
+msgstr "Gegenbuchung im Zeitkonto angelegt ({0} Std. zurückgebucht) für Arbeitstag {1}"
+
+#: hr_addon/events/leave_application.py:254
+msgid "Reversal Overtime Ledger Entry created (restored {0} hours)"
+msgstr "Gegenbuchung im Zeitkonto angelegt ({0} Std. zurückgebucht)"
+
+#: hr_addon/events/overtime_ledger.py:21
+msgid "Enable Overtime Ledger Feature in HR Addon Settings before using overtime ledger."
+msgstr "Bitte zuerst in „Zeiterfassung – Einstellungen“ das Zeitkonto aktivieren."
+
+#: hr_addon/events/overtime_ledger.py:88
+msgid "Backdated entry detected. Recalculating balances for {0} future entries..."
+msgstr "Rückwirkende Buchung erkannt. Salden von {0} nachfolgenden Buchungen werden neu berechnet …"
+
+#: hr_addon/events/overtime_ledger.py:104
+msgid "Balance recalculation completed successfully"
+msgstr "Neuberechnung der Salden erfolgreich abgeschlossen"
+
+#: hr_addon/events/overtime_ledger.py:111
+msgid "Warning: Balance recalculation failed. Please trigger manual repost."
+msgstr "Warnung: Neuberechnung der Salden fehlgeschlagen. Bitte Neuberechnung manuell starten."
+
+#: hr_addon/events/overtime_ledger.py:514
+msgid "Successfully reposted overtime entries for {0}. Current balance: {1} hours"
+msgstr "Zeitkonto-Buchungen für {0} neu berechnet. Aktueller Saldo: {1} Std."
+
+#: hr_addon/events/overtime_ledger.py:527
+msgid "Error reposting overtime entries: {0}"
+msgstr "Fehler bei der Neuberechnung der Zeitkonto-Buchungen: {0}"
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.js:67
+msgid "The overtime frozen date has changed. Do you want to repost all Overtime Ledger entries after saving?"
+msgstr "Das Abschlussdatum des Zeitkontos wurde geändert. Sollen nach dem Speichern alle Zeitkonto-Buchungen neu berechnet werden?"
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.js:116
+msgid "This will repost Overtime Ledger entries for selected employee(s) after the frozen date. Continue?"
+msgstr "Die Zeitkonto-Buchungen der ausgewählten Mitarbeiter nach dem Abschlussdatum werden neu berechnet. Fortfahren?"
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.js:117
+msgid "No employees selected. This will repost for ALL employees after the frozen date. Continue?"
+msgstr "Keine Mitarbeiter ausgewählt. Die Zeitkonto-Buchungen ALLER Mitarbeiter nach dem Abschlussdatum werden neu berechnet. Fortfahren?"
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.js:132
+msgid "Repost failed."
+msgstr "Neuberechnung fehlgeschlagen."
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.js:138
+msgid "Successfully reposted Overtime Ledger entries."
+msgstr "Zeitkonto-Buchungen erfolgreich neu berechnet."
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:66 hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:68
+msgid "Row {0}: Hours cannot be negative."
+msgstr "Zeile {0}: Stunden dürfen nicht negativ sein."
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:72
+msgid "Row {0}: To Hours must be greater than From Hours."
+msgstr "Zeile {0}: „Bis Stunden“ muss größer als „Ab Stunden“ sein."
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:76
+msgid "Row 1: The first rule must start from 0 hours."
+msgstr "Zeile 1: Die erste Regel muss bei 0 Stunden beginnen."
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:89
+msgid "Row {0}: Open-ended rule (blank To Hours) must be the last row."
+msgstr "Zeile {0}: Eine Regel ohne „Bis Stunden“ muss die letzte Zeile sein."
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:275
+msgid "{0} {1} at our Company! 🎉"
+msgstr "{0} {1} in unserem Unternehmen! 🎉"
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:278
+msgid "Everyone, let’s congratulate {0} on their work anniversary!"
+msgstr "Gratulieren wir alle {0} zum Dienstjubiläum!"
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:386
+msgid "Overtime Ledger feature is disabled in HR Addon Settings."
+msgstr "Das Zeitkonto ist in „Zeiterfassung – Einstellungen“ deaktiviert."
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:418
+msgid "No employees found with Overtime Ledger entries."
+msgstr "Keine Mitarbeiter mit Zeitkonto-Buchungen gefunden."
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:430
+msgid "Reposting Overtime Ledger Entries"
+msgstr "Zeitkonto-Buchungen werden neu berechnet"
+
+#: hr_addon/hr_addon/doctype/overtime_ledger_entry/overtime_ledger_entry.py:52
+msgid "Overtime Ledger Entry {0} has been cancelled successfully"
+msgstr "Zeitkonto-Buchung {0} wurde storniert"
+
+#: hr_addon/hr_addon/doctype/overtime_ledger_entry/overtime_ledger_entry.py:62
+msgid "Balance recalculation has been queued for all future entries"
+msgstr "Neuberechnung der Salden aller nachfolgenden Buchungen wurde eingeplant"
+
+#: hr_addon/hr_addon/doctype/overtime_ledger_entry/overtime_ledger_entry.py:101
+msgid "Overtime Ledger Disabled"
+msgstr "Zeitkonto deaktiviert"
+
+#: hr_addon/hr_addon/doctype/overtime_ledger_entry/overtime_ledger_entry.py:108
+msgid "Please set Overtime Hours Frozen Upto in HR Addon Settings (Overtime Ledger tab) before creating or modifying Overtime Ledger entries."
+msgstr "Bitte zuerst in „Zeiterfassung – Einstellungen“ (Reiter Zeitkonto) das Feld „Zeitkonto abgeschlossen bis“ setzen, bevor Zeitkonto-Buchungen angelegt oder geändert werden."
+
+#: hr_addon/hr_addon/doctype/overtime_ledger_entry/overtime_ledger_entry.py:109
+msgid "Overtime Frozen Date Required"
+msgstr "Abschlussdatum des Zeitkontos fehlt"
+
+#: hr_addon/hr_addon/doctype/overtime_ledger_entry/overtime_ledger_entry.py:113
+msgid "Overtime Ledger entries on or before {0} are frozen. You cannot create or modify entries in the closed period."
+msgstr "Zeitkonto-Buchungen bis einschließlich {0} sind abgeschlossen. Im abgeschlossenen Zeitraum können keine Buchungen angelegt oder geändert werden."
+
+#: hr_addon/hr_addon/doctype/overtime_ledger_entry/overtime_ledger_entry.py:116
+msgid "Overtime Frozen"
+msgstr "Zeitkonto abgeschlossen"
+
+#: hr_addon/hr_addon/doctype/overtime_ledger_entry/overtime_ledger_entry.py:132
+msgid "Cannot modify balance fields of submitted Overtime Ledger Entry. Balance Before: {0}, Balance After: {1}"
+msgstr "Die Saldofelder einer gebuchten Zeitkonto-Buchung können nicht geändert werden. Saldo vorher: {0}, Saldo nachher: {1}"
+
+#: hr_addon/hr_addon/doctype/overtime_payout/overtime_payout.py:28
+msgid "Hours is mandatory"
+msgstr "Stunden sind ein Pflichtfeld"
+
+#: hr_addon/hr_addon/doctype/overtime_payout/overtime_payout.py:30
+msgid "Hours must be greater than zero"
+msgstr "Stunden müssen größer als null sein"
+
+#: hr_addon/hr_addon/doctype/overtime_payout/overtime_payout.py:43
+msgid "Enable Overtime Ledger Feature in HR Addon Settings before submitting Overtime Payout."
+msgstr "Bitte zuerst in „Zeiterfassung – Einstellungen“ das Zeitkonto aktivieren, bevor eine Zeitkonto-Korrektur gebucht wird."
+
+#: hr_addon/hr_addon/doctype/overtime_payout/overtime_payout.py:202
+msgid "Reversal Overtime Ledger Entry {0} created to cancel {1}"
+msgstr "Gegenbuchung {0} im Zeitkonto angelegt, um {1} zu stornieren"
+
+#: hr_addon/hr_addon/doctype/overtime_payout/overtime_payout.py:227
+msgid "Overtime Ledger Entry already exists: {0}"
+msgstr "Zeitkonto-Buchung existiert bereits: {0}"
+
+#: hr_addon/hr_addon/doctype/overtime_payout/overtime_payout.py:242
+msgid "Overtime Ledger Entry {0} created. Balance {1} by {2} hours"
+msgstr "Zeitkonto-Buchung {0} angelegt. Saldo {1} um {2} Std."
+
+#: hr_addon/hr_addon/doctype/weekly_working_hours/weekly_working_hours_list.js:4
+msgid "Update Year"
+msgstr "Jahr aktualisieren"
+
+#: hr_addon/hr_addon/doctype/workday/workday.js:63
+msgid "Attendance updated in Employee Checkins"
+msgstr "Anwesenheit in den Stempelungen aktualisiert"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:43
+msgid "Workday created for Employee {0} on {1} with status: {2}"
+msgstr "Arbeitstag für Mitarbeiter {0} am {1} angelegt, Status: {2}"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:266
+msgid "{0} already exists for employee: {1}, on the given date: {2}"
+msgstr "{0} existiert bereits für Mitarbeiter {1} am {2}"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:279
+msgid "{0} Workday Creation Log(s) deleted successfully : <br><br>{1}"
+msgstr "{0} Arbeitstag-Protokoll(e) gelöscht: <br><br>{1}"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:282
+msgid "Logs Deleted"
+msgstr "Protokolle gelöscht"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:563
+msgid "Please create Weekly Working Hours for the selected Employee:{0} first for date : {1}."
+msgstr "Bitte zuerst eine Sollarbeitszeit für Mitarbeiter {0} anlegen, gültig am {1}."
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:567
+msgid "There exist multiple Weekly Working Hours exist for the Date <b>{0}</b>: <br>{1} <br>"
+msgstr "Für das Datum <b>{0}</b> gibt es mehrere gültige Sollarbeitszeiten: <br>{1} <br>"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:1041
+msgid "Holiday list not set in {0}"
+msgstr "Keine Feiertagsliste in {0} hinterlegt"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:1340
+msgid "Please select a date range"
+msgstr "Bitte einen Zeitraum auswählen"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:1352
+msgid "No unmarked days found for the selected date range"
+msgstr "Im gewählten Zeitraum gibt es keine Tage ohne Anwesenheit"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:1494
+msgid "Something went wrong in Workday Creation: {0}"
+msgstr "Fehler beim Anlegen des Arbeitstags: {0}"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:1732
+msgid "{0} Attendance {1} created successfully"
+msgstr "Anwesenheit {1} ({0}) angelegt"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:1782
+msgid "Attendance {0} updated with {1} status"
+msgstr "Anwesenheit {0} auf Status {1} aktualisiert"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:1900
+msgid "Deleting Workday {0} will also cancel linked Attendance {1}"
+msgstr "Beim Löschen des Arbeitstags {0} wird auch die verknüpfte Anwesenheit {1} storniert"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:1913
+msgid "Attendance {0} has been cancelled and unlinked from this Workday"
+msgstr "Anwesenheit {0} wurde storniert und von diesem Arbeitstag gelöst"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:1927
+msgid "Could not cancel linked Attendance: {0}"
+msgstr "Verknüpfte Anwesenheit konnte nicht storniert werden: {0}"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:18 hr_addon/hr_addon/doctype/workday/workday_list.js:20 hr_addon/hr_addon/doctype/workday/workday_list.js:326
+msgid "Process Workdays"
+msgstr "Arbeitstage erzeugen"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:24
+msgid "Skip Workday if No Weekly Working Hours"
+msgstr "Keine Arbeitstage ohne Sollarbeitszeit"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:30
+msgid "For Employee(s) - Leave empty for all active"
+msgstr "Für Mitarbeiter (leer = alle aktiven)"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:76
+msgid "Toggle Days to process"
+msgstr "Tage einzeln auswählen"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:114
+msgid "Unprocessed Workdays for days"
+msgstr "Tage ohne Arbeitstag"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:131
+msgid "No employee selected. Do you want to process workdays for all active employees?"
+msgstr "Kein Mitarbeiter ausgewählt. Arbeitstage für alle aktiven Mitarbeiter erzeugen?"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:150
+msgid "No active employees found"
+msgstr "Keine aktiven Mitarbeiter gefunden"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:157
+msgid "Please select at least one employee"
+msgstr "Bitte mindestens einen Mitarbeiter auswählen"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:184
+msgid "Workday for the period: {0} - {1}, has already been processed for the selected Employee(s). <br><br>For following dates workdays are available:<br>{2}"
+msgstr "Für den Zeitraum {0} – {1} wurden die Arbeitstage der ausgewählten Mitarbeiter bereits erzeugt. <br><br>Für folgende Tage sind Arbeitstage vorhanden:<br>{2}"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:229
+msgid "Are you sure you want to process workdays for the following {0} employee(s) from {1} to {2}?<br><br><b>Employees:</b><br>{3}<br><br><b>Dates to process:</b><br>{4}"
+msgstr "Arbeitstage für folgende {0} Mitarbeiter vom {1} bis {2} erzeugen?<br><br><b>Mitarbeiter:</b><br>{3}<br><br><b>Zu verarbeitende Tage:</b><br>{4}"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:290
+msgid "No workdays were created."
+msgstr "Es wurden keine Arbeitstage angelegt."
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:294
+msgid "Workdays Summary"
+msgstr "Zusammenfassung Arbeitstage"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:302
+msgid "Workdays Processed"
+msgstr "Arbeitstage erzeugt"
+
+#: hr_addon/hr_addon/doctype/workday/workday_list.js:316
+msgid "No new workdays to process for the selected employee(s) in the given date range."
+msgstr "Für die ausgewählten Mitarbeiter gibt es im gewählten Zeitraum keine neuen Arbeitstage zu erzeugen."
+
+#: hr_addon/hr_addon/report/overtime_ledger/overtime_ledger.js:109
+msgid "Show Cancelled Entries"
+msgstr "Stornierte Buchungen anzeigen"
+
+#: hr_addon/hr_addon/report/overtime_ledger/overtime_ledger.js:115
+msgid "Specific Date"
+msgstr "Stichtag"
+
+#: hr_addon/hr_addon/report/overtime_ledger/overtime_ledger.js:121
+msgid "Range Delta"
+msgstr "Saldoänderung im Zeitraum"
+
+#: hr_addon/hr_addon/report/overtime_ledger/overtime_ledger.js:127
+msgid "Show Time in Decimal"
+msgstr "Stunden als Dezimalzahl anzeigen"
+
+#: hr_addon/hr_addon/report/overtime_ledger/overtime_ledger.py:302
+msgid "Voucher Date"
+msgstr "Belegdatum"
+
+#: hr_addon/hr_addon/report/overtime_ledger/overtime_ledger.py:320
+msgid "Target Hours"
+msgstr "Sollstunden"
+
+#: hr_addon/hr_addon/report/overtime_ledger/overtime_ledger.py:327
+msgid "Worked Hours"
+msgstr "Iststunden"
+
+#: hr_addon/hr_addon/report/overtime_ledger/overtime_ledger.py:334
+msgid "Over Target"
+msgstr "Über Soll"
+
+#: hr_addon/hr_addon/report/overtime_ledger/overtime_ledger.py:340
+msgid "Under Target"
+msgstr "Unter Soll"
+
+#: hr_addon/hr_addon/report/overtime_ledger/overtime_ledger.py:346
+msgid "Overtime Balance"
+msgstr "Zeitkontostand"
+
+#: hr_addon/hr_addon/report/overtime_ledger/overtime_ledger.py:353
+msgid "Delta Balance"
+msgstr "Saldoänderung"
+
+#: hr_addon/hr_addon/report/work_hour_report/work_hour_report.js:25
+msgid "Employee Id"
+msgstr "Mitarbeiter-ID"
+
+#: hr_addon/hr_addon/report/work_hour_report/work_hour_report.py:69
+msgid "Work Hours"
+msgstr "Anwesenheit brutto (Std.)"
+
+#: hr_addon/hr_addon/report/work_hour_report/work_hour_report.py:70
+msgid "Break Hours"
+msgstr "Pause (Std.)"
+
+#: hr_addon/hr_addon/report/work_hour_report/work_hour_report.py:72
+msgid "Actual Working Hours"
+msgstr "Iststunden"
+
+#: hr_addon/public/js/attendance.js:50
+msgid "Attendance cancelled successfully"
+msgstr "Anwesenheit storniert"
+
+#: hr_addon/public/js/attendance.js:59
+msgid "Failed to delete workday: {0}"
+msgstr "Arbeitstag konnte nicht gelöscht werden: {0}"
+
+#: hr_addon/public/js/attendance.js:69
+msgid "Error deleting workday: {0}"
+msgstr "Fehler beim Löschen des Arbeitstags: {0}"
+
+#: hr_addon/public/js/attendance.js:109
+msgid "Attendance cancelled."
+msgstr "Anwesenheit storniert."
+
+#: hr_addon/public/js/employee.js:77
+msgid "Current Overtime Hours"
+msgstr "Aktueller Zeitkontostand (Std.)"
+
+#: hr_addon/public/js/leave_application.js:90
+msgid "Current overtime balance: {0} hours"
+msgstr "Aktueller Zeitkontostand: {0} Std."
+
+#: hr_addon/events/leave_application.py:56
+msgid "Minimum overtime balance of {0} hours (one full day) required for Leave Type '{1}'. Current balance: {2} hours"
+msgstr "Für die Abwesenheitsart „{1}“ ist ein Zeitkontostand von mindestens {0} Std. (ein ganzer Tag) erforderlich. Aktueller Stand: {2} Std."
+
+#: hr_addon/events/leave_application.py:76
+msgid "Insufficient overtime balance for {0} of Leave Type '{1}'. Required: {2} hours, Available: {3} hours"
+msgstr "Zeitkontostand reicht nicht für {0} der Abwesenheitsart „{1}“. Benötigt: {2} Std., verfügbar: {3} Std."
+
+#: hr_addon/events/leave_application.py:89
+msgid "This {0} leave will deduct {1} hours from overtime balance. Current balance: {2} hours, Balance after leave: {3} hours"
+msgstr "Diese Abwesenheit ({0}) zieht {1} Std. vom Zeitkonto ab. Aktueller Stand: {2} Std., Stand danach: {3} Std."
+
+#: hr_addon/events/leave_application.py:135
+msgid "Cancelled {0} attendance record(s); overtime deductions linked to those days were reversed."
+msgstr "{0} Anwesenheit(en) storniert; die zugehörigen Abzüge vom Zeitkonto wurden zurückgebucht."
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:80
+msgid "Row {0}: Rule overlaps with the previous range. Example of invalid overlap: 0-6 and 3-5."
+msgstr "Zeile {0}: Die Regel überschneidet sich mit dem vorherigen Bereich. Beispiel für eine unzulässige Überschneidung: 0–6 und 3–5."
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:440
+msgid "Successfully reposted Overtime Ledger entries for {0} selected employee(s) starting from {1}."
+msgstr "Zeitkonto-Buchungen für {0} ausgewählte(n) Mitarbeiter ab {1} neu berechnet."
+
+#: hr_addon/hr_addon/doctype/hr_addon_settings/hr_addon_settings.py:444
+msgid "Successfully reposted Overtime Ledger entries for {0} employee(s) starting from {1}."
+msgstr "Zeitkonto-Buchungen für {0} Mitarbeiter ab {1} neu berechnet."
+
+#: hr_addon/hr_addon/doctype/overtime_ledger_entry/overtime_ledger_entry.py:98
+msgid "Enable Overtime Ledger Feature in HR Addon Settings before creating Overtime Ledger entries."
+msgstr "Bitte zuerst in „Zeiterfassung – Einstellungen“ das Zeitkonto aktivieren, bevor Zeitkonto-Buchungen angelegt werden."
+
+#: hr_addon/hr_addon/doctype/weekly_working_hours/weekly_working_hours.py:32 hr_addon/hr_addon/doctype/workday/workday.py:1335
+msgid "{0} is not active"
+msgstr "{0} ist nicht aktiv"
+
+#: hr_addon/hr_addon/doctype/workday/workday.py:57
+msgid "Cannot create workday for employee {0} on date {1}. Weekly Working Hours not configured. Please configure Weekly Working Hours."
+msgstr "Arbeitstag für Mitarbeiter {0} am {1} kann nicht angelegt werden: Keine Sollarbeitszeit hinterlegt. Bitte Sollarbeitszeit anlegen."
+
+#: hr_addon/public/js/attendance.js:27
+msgid "Do you want to delete the workday {0} and it's linked Workday Creation Log?"
+msgstr "Arbeitstag {0} und das zugehörige Arbeitstag-Protokoll löschen?"
+
+#: hr_addon/public/js/attendance.js:39
+msgid "Workday and Workday Creation Log deleted successfully. Cancelling attendance..."
+msgstr "Arbeitstag und Arbeitstag-Protokoll gelöscht. Anwesenheit wird storniert …"
+
+#: hr_addon/public/js/attendance.js:93
+msgid "Attendance cancelled. Workday was not deleted."
+msgstr "Anwesenheit storniert. Der Arbeitstag wurde nicht gelöscht."
+
+#. MSW: Desktop, Tabs der Einstellungsseite (msw_zeiterfassung/oberflaeche.py)
+msgid "Frappe HR"
+msgstr "Personal"
+
+msgid "HR Setup"
+msgstr "Personalstammdaten"
+
+msgctxt "HR Addon Settings"
+msgid "Overtime Ledger"
+msgstr "Zeitkonto"
+
