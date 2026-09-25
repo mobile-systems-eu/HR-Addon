@@ -132,6 +132,27 @@ FIELDS = [
 		"depends_on": "eval:doc.msw_tagesabschluss_aktiv",
 		"insert_after": "msw_tagesabschluss_aktiv",
 	},
+	# -- Urlaub --------------------------------------------------------
+	{
+		"fieldname": "msw_sec_urlaub",
+		"fieldtype": "Section Break",
+		"label": "Urlaub",
+		"insert_after": "msw_tagesabschluss_tage",
+	},
+	{
+		"fieldname": "msw_urlaub_nur_sollzeit",
+		"fieldtype": "Check",
+		"label": "Urlaub nur für Tage mit Sollzeit abziehen",
+		"default": "1",
+		"description": (
+			"Tage, an denen die Sollarbeitszeit des Mitarbeiters 0 Stunden hat oder "
+			"für den Wochentag keine Zeile enthält (z. B. Samstag), kosten keinen "
+			"Urlaubstag. Gilt für Abwesenheitsarten, bei denen Feiertage nicht "
+			"mitgezählt werden. Tage ganz ohne gültige Sollarbeitszeit zählen wie bisher. "
+			"Wirkt auf neue und geänderte Anträge."
+		),
+		"insert_after": "msw_sec_urlaub",
+	},
 	# -- Oberflaeche ---------------------------------------------------
 	{
 		"fieldname": "msw_tab_oberflaeche",

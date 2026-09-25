@@ -18,6 +18,11 @@ after_migrate = [
 	"hr_addon.msw_zeiterfassung.oberflaeche.after_migrate",
 ]
 
+# MSW: Urlaub nur fuer Tage mit Sollzeit abziehen (abschaltbar), siehe
+# msw_zeiterfassung/urlaubstage.py
+before_request = ["hr_addon.msw_zeiterfassung.urlaubstage.installieren"]
+before_job = ["hr_addon.msw_zeiterfassung.urlaubstage.installieren"]
+
 # MSW: HR-Bereiche ausblenden, die nicht genutzt werden (abschaltbar)
 boot_session = "hr_addon.msw_zeiterfassung.oberflaeche.boot_session"
 
