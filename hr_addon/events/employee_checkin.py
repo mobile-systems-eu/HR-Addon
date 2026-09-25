@@ -45,6 +45,11 @@ from frappe.utils import getdate
 JOB_QUEUE = "short"
 JOB_TIMEOUT = 600
 
+STATUS_OHNE_BUCHUNG = ("Missing Checkin", "Absent")
+"""Workday-Status, bei denen ``create_attendace_record()`` ohne jede
+Aenderung zurueckkehrt (``else: return``). Eine Attendance, die der Workday
+frueher am Tag angelegt hat, bliebe dann mit dem alten Wert stehen."""
+
 REENTRY_FLAG = "hr_addon_workday_sync"
 """Schutz gegen Wiedereintritt. Derzeit kann keine Schleife entstehen --
 ``set_attendance_in_employee_checkins()`` speichert den Checkin voll
@@ -133,7 +138,9 @@ def sync_workday(employee: str, log_date: str) -> None:
             "Workday", {"employee": employee, "log_date": datum}, "name"
         )
         if name:
-            frappe.get_doc("Workday", name).save()
+            workday = frappe.get_doc("Workday", name)
+            workday.save()
+            _cancel_stale_attendance(workday)
             frappe.db.commit()
             return
 
@@ -152,3 +159,40 @@ def sync_workday(employee: str, log_date: str) -> None:
     finally:
         frappe.set_user(urspruenglicher_benutzer)
         frappe.flags.pop(REENTRY_FLAG, None)
+
+
+def _cancel_stale_attendance(workday) -> None:
+    """Attendance stornieren, die nach der Neuberechnung nicht mehr stimmt.
+
+    Beispiel: Kommen 6:00, Pause 9:00 -- der Workday ist ``Present`` mit
+    3 h, Attendance und Gleitzeitbuchung entstehen. Mit dem dritten Stempel
+    (oder wenn einer geloescht wird) ist die Anzahl ungerade, der Workday
+    steht auf ``Missing Checkin`` und null Stunden. ``create_attendace_
+    record()`` laesst die Attendance dann unberuehrt, das Konto behielte
+    die 3 h. Vergisst der Mitarbeiter das Gehen, bliebe diese Teilbuchung
+    dauerhaft -- der naechtliche Auftrag fasst Tage mit Workday nicht an.
+
+    Storniert wird wie beim Loeschen des Workdays (``on_trash`` ->
+    ``cancel_attendance``): ``Attendance.cancel()`` bucht die Gleitzeit per
+    Gegenbuchung zurueck und loest die Verknuepfung am Workday. Kommt der
+    fehlende Stempel spaeter, legt der naechste Lauf eine neue Attendance
+    an.
+
+    Bewusst eng gefasst: nur Attendances, die dieser Workday selbst
+    angelegt hat (``custom_workday``), und nur ``Present``. Urlaubs- und
+    Halbtags-Attendances aus einer Leave Application bleiben unangetastet.
+    """
+    if workday.status not in STATUS_OHNE_BUCHUNG:
+        return
+
+    namen = frappe.get_all(
+        "Attendance",
+        filters={
+            "custom_workday": workday.name,
+            "docstatus": 1,
+            "status": "Present",
+        },
+        pluck="name",
+    )
+    for name in namen:
+        frappe.get_doc("Attendance", name).cancel()
