@@ -772,7 +772,14 @@ def calculate_actual_working_hours(hours_worked, break_hours, default_break_hour
 			is_swapped = mechanism == "Break Hours from Employee Checkins" and hr_addon_settings.swap_hours_worked_and_actual_working_hours
 	
 	# Special case: no break hours when hours worked is less than threshold
-	if no_break_hours and hours_worked < hours_worked_threshold and not is_swapped:
+	# MSW: nicht bei der Pausenregel -- dort sperrt das Formular den Haken
+	# (weekly_working_hours.js), die Staffel gilt ab der ersten Minute.
+	if (
+		no_break_hours
+		and mechanism != MECHANISM_MINIMUM_BREAK_RULE
+		and hours_worked < hours_worked_threshold
+		and not is_swapped
+	):
 		return hours_worked
 	
 	# Calculate based on mechanism
