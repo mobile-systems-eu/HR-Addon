@@ -100,6 +100,12 @@ def revalidate_workday_on_update(doc, method=None):
     ``create_attendace_record()`` schreibt das Feld ``attendance`` per
     vollem ``save()`` in die Checkins zurueck.
     """
+    if doc.flags.in_insert:
+        # frappe ruft on_update auch beim Anlegen auf (nach after_insert).
+        # Ohne diese Abfrage liefen je Stempelung zwei Jobs parallel auf
+        # denselben Workday und kollidierten ("Record has changed since
+        # last read", beobachtet 26.09.2026).
+        return
     zeit_geaendert = doc.has_value_changed("time")
     mitarbeiter_geaendert = doc.has_value_changed("employee")
     if not zeit_geaendert and not mitarbeiter_geaendert:
@@ -136,6 +142,9 @@ def _enqueue(employee, zeitpunkt):
 # -- Die eigentliche Arbeit ------------------------------------------------
 
 
+VERSUCHE = 3
+
+
 def sync_workday(employee: str, log_date: str) -> None:
     """Workday zu diesem Tag anlegen oder neu rechnen.
 
@@ -143,7 +152,27 @@ def sync_workday(employee: str, log_date: str) -> None:
     (es wird immer aus dem aktuellen Stand gerechnet), und ein
     uebersprungener Job waere genau der Datenverlust, den dieser Hook
     verhindern soll.
+
+    Mehrere Stempelungen innerhalb weniger Sekunden erzeugen mehrere Jobs,
+    die auf verschiedenen Workern gleichzeitig laufen koennen. MariaDB bricht
+    dann einen mit ``QueryDeadlockError`` ab ("Record has changed since last
+    read"). Der Job versucht es dann erneut mit frischem Stand.
     """
+    import random
+    import time
+
+    for versuch in range(1, VERSUCHE + 1):
+        try:
+            _sync_workday(employee, log_date)
+            return
+        except frappe.QueryDeadlockError:
+            frappe.db.rollback()
+            if versuch == VERSUCHE:
+                raise
+            time.sleep(random.uniform(0.5, 2.0) * versuch)
+
+
+def _sync_workday(employee: str, log_date: str) -> None:
     from hr_addon.hr_addon.doctype.workday.workday import (
         has_valid_weekly_working_hours,
     )
