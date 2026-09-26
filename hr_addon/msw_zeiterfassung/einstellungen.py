@@ -25,12 +25,20 @@ from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
 SETTINGS = "HR Addon Settings"
 MODULE = "MSW Zeiterfassung"
 
-SONN_FEIERTAG_ABLEHNEN = "Stempelung ablehnen"
-SONN_FEIERTAG_NICHT_WERTEN = "Annehmen, aber nicht werten"
+ABLEHNEN = "Stempelung ablehnen"
+ANNEHMEN = "Stempelung annehmen"
 
-MELDUNG_SONN_FEIERTAG = (
-	"{tag}: An Sonn- und Feiertagen kann nicht gestempelt werden. "
-	"Bitte im Büro melden."
+MELDUNG_FEIERTAG = "{tag}: An Feiertagen kann nicht gestempelt werden. Bitte im Büro melden."
+MELDUNG_OHNE_SOLLZEIT = (
+	"{tag}: Für diesen Tag ist keine Arbeitszeit vorgesehen. Bitte im Büro melden."
+)
+
+# Felder frueherer Staende; setup() loescht sie samt Wert.
+OBSOLETE_FIELDS = (
+	"msw_sec_sonn_feiertag",
+	"msw_sonn_feiertag_regel",
+	"msw_sonn_feiertag_meldung",
+	"msw_sonn_feiertag_hr_ausnahme",
 )
 
 FIELDS = [
@@ -52,47 +60,83 @@ FIELDS = [
 		"insert_after": "msw_tab_arbeitstage",
 	},
 	{
-		"fieldname": "msw_sec_sonn_feiertag",
+		"fieldname": "msw_sec_feiertag",
 		"fieldtype": "Section Break",
-		"label": "Sonn- und Feiertage",
+		"label": "Feiertage",
 		"description": (
-			"Sonn- und Feiertage kommen aus der Feiertagsliste des Mitarbeiters "
-			"(Feiertagsliste-Zuordnung). Ein Samstag zählt nur, wenn dort ein "
-			"Feiertag eingetragen ist."
+			"Feiertage kommen aus der Feiertagsliste des Mitarbeiters "
+			"(Feiertagsliste-Zuordnung)."
 		),
 		"insert_after": "msw_tab_stempelregeln",
 	},
 	{
-		"fieldname": "msw_sonn_feiertag_regel",
+		"fieldname": "msw_feiertag_regel",
 		"fieldtype": "Select",
-		"label": "Stempelung an Sonn- und Feiertagen",
-		"options": f"{SONN_FEIERTAG_ABLEHNEN}\n{SONN_FEIERTAG_NICHT_WERTEN}",
-		"default": SONN_FEIERTAG_ABLEHNEN,
+		"label": "Stempelung an Feiertagen",
+		"options": f"{ABLEHNEN}\n{ANNEHMEN}",
+		"default": ABLEHNEN,
 		"description": (
-			"„Stempelung ablehnen“: Die Stempeluhr zeigt die Meldung unten an, "
-			"es wird nichts gespeichert. „Annehmen, aber nicht werten“: Die "
-			"Stempelung wird gespeichert, zählt aber nicht als Arbeitszeit "
-			"(solange „Allow Workdays on Holidays“ aus ist)."
+			"„Stempelung ablehnen“: Die Stempeluhr zeigt die Meldung unten an, es wird "
+			"nichts gespeichert. „Stempelung annehmen“: Die Stempelung wird gespeichert; "
+			"als Arbeitszeit zählt sie nur, wenn „Arbeitstage an Feiertagen zulassen“ an ist."
 		),
-		"insert_after": "msw_sec_sonn_feiertag",
+		"insert_after": "msw_sec_feiertag",
 	},
 	{
-		"fieldname": "msw_sonn_feiertag_meldung",
+		"fieldname": "msw_feiertag_meldung",
 		"fieldtype": "Small Text",
 		"label": "Meldung an der Stempeluhr",
-		"default": MELDUNG_SONN_FEIERTAG,
-		"description": "{tag} wird durch den Namen des Feiertags ersetzt, z. B. „Sonntag“ oder „Ostermontag“.",
-		"depends_on": f'eval:doc.msw_sonn_feiertag_regel=="{SONN_FEIERTAG_ABLEHNEN}"',
-		"insert_after": "msw_sonn_feiertag_regel",
+		"default": MELDUNG_FEIERTAG,
+		"description": "{tag} wird durch den Namen des Feiertags ersetzt, z. B. „Ostermontag“.",
+		"depends_on": f'eval:doc.msw_feiertag_regel=="{ABLEHNEN}"',
+		"insert_after": "msw_feiertag_regel",
 	},
 	{
-		"fieldname": "msw_sonn_feiertag_hr_ausnahme",
+		"fieldname": "msw_sec_ohne_sollzeit",
+		"fieldtype": "Section Break",
+		"label": "Tage ohne Sollarbeitszeit",
+		"description": (
+			"Gemeint sind Wochentage, für die die Sollarbeitszeit des Mitarbeiters keine "
+			"Zeile enthält (bei MSW der Sonntag). Eine Zeile mit 0 Stunden (Samstag) ist "
+			"ein Eintrag: dort kann gestempelt werden. Mitarbeiter ohne gültige "
+			"Sollarbeitszeit werden nicht abgelehnt."
+		),
+		"insert_after": "msw_feiertag_meldung",
+	},
+	{
+		"fieldname": "msw_ohne_sollzeit_regel",
+		"fieldtype": "Select",
+		"label": "Stempelung an Tagen ohne Sollarbeitszeit",
+		"options": f"{ABLEHNEN}\n{ANNEHMEN}",
+		"default": ABLEHNEN,
+		"description": (
+			"„Stempelung annehmen“: Die Stempelung wird gespeichert, zählt aber nicht als "
+			"Arbeitszeit, weil für den Tag kein Arbeitstag angelegt werden kann."
+		),
+		"insert_after": "msw_sec_ohne_sollzeit",
+	},
+	{
+		"fieldname": "msw_ohne_sollzeit_meldung",
+		"fieldtype": "Small Text",
+		"label": "Meldung an der Stempeluhr",
+		"default": MELDUNG_OHNE_SOLLZEIT,
+		"description": "{tag} wird durch den Wochentag ersetzt, z. B. „Sonntag“.",
+		"depends_on": f'eval:doc.msw_ohne_sollzeit_regel=="{ABLEHNEN}"',
+		"insert_after": "msw_ohne_sollzeit_regel",
+	},
+	{
+		"fieldname": "msw_sec_stempel_ausnahme",
+		"fieldtype": "Section Break",
+		"label": "Ausnahme",
+		"insert_after": "msw_ohne_sollzeit_meldung",
+	},
+	{
+		"fieldname": "msw_stempel_hr_ausnahme",
 		"fieldtype": "Check",
 		"label": "HR Manager und System Manager dürfen trotzdem Stempelungen erfassen",
 		"default": "1",
-		"description": "Zum Nachtragen genehmigter Sonntags- oder Feiertagsarbeit von Hand.",
-		"depends_on": f'eval:doc.msw_sonn_feiertag_regel=="{SONN_FEIERTAG_ABLEHNEN}"',
-		"insert_after": "msw_sonn_feiertag_meldung",
+		"description": "Gilt für beide Regeln. Zum Nachtragen genehmigter Sonntags- oder Feiertagsarbeit von Hand.",
+		"insert_after": "msw_sec_stempel_ausnahme",
 	},
 	# -- Automatik -----------------------------------------------------
 	{
@@ -171,7 +215,7 @@ FIELDS = [
 		"fieldname": "msw_tab_oberflaeche",
 		"fieldtype": "Tab Break",
 		"label": "Oberfläche",
-		"insert_after": "msw_sonn_feiertag_hr_ausnahme",
+		"insert_after": "msw_stempel_hr_ausnahme",
 	},
 	{
 		"fieldname": "msw_vereinfachte_oberflaeche",
@@ -237,6 +281,12 @@ def setup():
 	ensure_module_def()
 	fields = [dict(f, module=MODULE) for f in FIELDS]
 	create_custom_fields({SETTINGS: fields}, update=True)
+
+	for fieldname in OBSOLETE_FIELDS:
+		name = frappe.db.get_value("Custom Field", {"dt": SETTINGS, "fieldname": fieldname})
+		if name:
+			frappe.delete_doc("Custom Field", name, ignore_permissions=True, force=True)
+		frappe.db.delete("Singles", {"doctype": SETTINGS, "field": fieldname})
 
 	for fieldname, default in DEFAULTS.items():
 		if not _is_stored(fieldname):
